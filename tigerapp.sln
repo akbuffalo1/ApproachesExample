@@ -1,0 +1,107 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AD", "AD\AD.shproj", "{AC8C3E83-C8B8-46DF-B62B-A028F84A3516}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TigerApp.Shared", "TigerApp.Shared\TigerApp.Shared.shproj", "{7821B69E-2AD2-4280-9A8E-2D7BD9AC5106}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerApp.iOS", "TigerApp.iOS\TigerApp.iOS.csproj", "{B8D67960-82DE-49D1-AAC2-1F3EC6810476}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{58BE6621-4837-47CC-9AB9-90F25BFC7FCE}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerApp.Droid", "TigerApp.Droid\TigerApp.Droid.csproj", "{245E98EB-69AE-4EDB-91A5-1E9FEFAEDE18}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		AD\AD.projitems*{245e98eb-69ae-4edb-91a5-1e9fefaede18}*SharedItemsImports = 4
+		TigerApp.Shared\TigerApp.Shared.projitems*{245e98eb-69ae-4edb-91a5-1e9fefaede18}*SharedItemsImports = 4
+		TigerApp.Shared\TigerApp.Shared.projitems*{7821b69e-2ad2-4280-9a8e-2d7bd9ac5106}*SharedItemsImports = 13
+		AD\AD.projitems*{ac8c3e83-c8b8-46df-b62b-a028f84a3516}*SharedItemsImports = 13
+		AD\AD.projitems*{b8d67960-82de-49d1-aac2-1f3ec6810476}*SharedItemsImports = 4
+		TigerApp.Shared\TigerApp.Shared.projitems*{b8d67960-82de-49d1-aac2-1f3ec6810476}*SharedItemsImports = 4
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|iPhone = Debug|iPhone
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|Any CPU = Release|Any CPU
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8D67960-82DE-49D1-AAC2-1F3EC6810476}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{B8D67960-82DE-49D1-AAC2-1F3EC6810476}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{B8D67960-82DE-49D1-AAC2-1F3EC6810476}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{B8D67960-82DE-49D1-AAC2-1F3EC6810476}.Debug|iPhone.Build.0 = Debug|iPhone
+		{B8D67960-82DE-49D1-AAC2-1F3EC6810476}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{B8D67960-82DE-49D1-AAC2-1F3EC6810476}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{B8D67960-82DE-49D1-AAC2-1F3EC6810476}.Release|Any CPU.ActiveCfg = Release|iPhone
+		{B8D67960-82DE-49D1-AAC2-1F3EC6810476}.Release|Any CPU.Build.0 = Release|iPhone
+		{B8D67960-82DE-49D1-AAC2-1F3EC6810476}.Release|iPhone.ActiveCfg = Release|iPhone
+		{B8D67960-82DE-49D1-AAC2-1F3EC6810476}.Release|iPhone.Build.0 = Release|iPhone
+		{B8D67960-82DE-49D1-AAC2-1F3EC6810476}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{B8D67960-82DE-49D1-AAC2-1F3EC6810476}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{245E98EB-69AE-4EDB-91A5-1E9FEFAEDE18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{245E98EB-69AE-4EDB-91A5-1E9FEFAEDE18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{245E98EB-69AE-4EDB-91A5-1E9FEFAEDE18}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{245E98EB-69AE-4EDB-91A5-1E9FEFAEDE18}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{245E98EB-69AE-4EDB-91A5-1E9FEFAEDE18}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{245E98EB-69AE-4EDB-91A5-1E9FEFAEDE18}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{245E98EB-69AE-4EDB-91A5-1E9FEFAEDE18}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{245E98EB-69AE-4EDB-91A5-1E9FEFAEDE18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{245E98EB-69AE-4EDB-91A5-1E9FEFAEDE18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{245E98EB-69AE-4EDB-91A5-1E9FEFAEDE18}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{245E98EB-69AE-4EDB-91A5-1E9FEFAEDE18}.Release|iPhone.Build.0 = Release|Any CPU
+		{245E98EB-69AE-4EDB-91A5-1E9FEFAEDE18}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{245E98EB-69AE-4EDB-91A5-1E9FEFAEDE18}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$1.ResourceNamePolicy = FileFormatDefault
+		$0.TextStylePolicy = $2
+		$2.inheritsSet = VisualStudio
+		$2.inheritsScope = text/plain
+		$2.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $3
+		$3.IndentSwitchSection = True
+		$3.NewLinesForBracesInProperties = True
+		$3.NewLinesForBracesInAccessors = True
+		$3.NewLinesForBracesInAnonymousMethods = True
+		$3.NewLinesForBracesInControlBlocks = True
+		$3.NewLinesForBracesInAnonymousTypes = True
+		$3.NewLinesForBracesInObjectCollectionArrayInitializers = True
+		$3.NewLinesForBracesInLambdaExpressionBody = True
+		$3.NewLineForElse = True
+		$3.NewLineForCatch = True
+		$3.NewLineForFinally = True
+		$3.NewLineForMembersInObjectInit = True
+		$3.NewLineForMembersInAnonymousTypes = True
+		$3.NewLineForClausesInQuery = True
+		$3.SpacingAfterMethodDeclarationName = False
+		$3.SpaceAfterMethodCallName = False
+		$3.SpaceBeforeOpenSquareBracket = False
+		$3.inheritsSet = Mono
+		$3.inheritsScope = text/x-csharp
+		$3.scope = text/x-csharp
+		$0.StandardHeader = $4
+		$4.Text = 
+		$4.IncludeInNewFiles = True
+		$0.NameConventionPolicy = $5
+		$5.Rules = $6
+		$6.NamingRule = $26
+		$26.AffectedEntity = None
+		$26.VisibilityMask = VisibilityMask
+		$26.NamingStyle = None
+		$26.IncludeInstanceMembers = True
+		$26.IncludeStaticEntities = True
+	EndGlobalSection
+EndGlobal
