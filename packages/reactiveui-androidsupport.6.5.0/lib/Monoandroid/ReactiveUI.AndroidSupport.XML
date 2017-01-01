@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ReactiveUI.AndroidSupport</name>
+    </assembly>
+    <members>
+        <member name="T:ReactiveUI.ReactiveFragmentActivity`1">
+            <summary>
+            This is an Activity that is both an Activity and has ReactiveObject powers
+            (i.e. you can call RaiseAndSetIfChanged)
+            </summary></member>
+        <member name="T:ReactiveUI.ReactiveFragmentActivity">
+            <summary>
+            This is an Activity that is both an Activity and has ReactiveObject powers
+            (i.e. you can call RaiseAndSetIfChanged)
+            </summary></member>
+        <member name="P:ReactiveUI.ReactiveFragmentActivity.Changing">
+            <summary>
+            Represents an Observable that fires *before* a property is about to
+            be changed.
+            </summary></member>
+        <member name="P:ReactiveUI.ReactiveFragmentActivity.Changed">
+            <summary>
+            Represents an Observable that fires *after* a property has changed.
+            </summary></member>
+        <member name="M:ReactiveUI.ReactiveFragmentActivity.SuppressChangeNotifications">
+            <summary>
+            When this method is called, an object will not fire change
+            notifications (neither traditional nor Observable notifications)
+            until the return value is disposed.
+            </summary>
+            <returns>An object that, when disposed, reenables change
+            notifications.</returns></member>
+        <member name="T:ReactiveUI.ReactivePagerAdapter`1">
+            <summary>
+            ReactivePagerAdapter is a PagerAdapter that will interface with a
+            ReactiveList, in a similar fashion to ReactiveTableViewSource.
+            </summary></member>
+        <member name="T:ReactiveUI.AndroidSupport.ReactiveFragment`1">
+            <summary>
+            This is a Fragment that is both an Activity and has ReactiveObject powers
+            (i.e. you can call RaiseAndSetIfChanged)
+            </summary></member>
+        <member name="T:ReactiveUI.AndroidSupport.ReactiveFragment">
+            <summary>
+            This is a Fragment that is both an Activity and has ReactiveObject powers
+            (i.e. you can call RaiseAndSetIfChanged)
+            </summary></member>
+        <member name="P:ReactiveUI.AndroidSupport.ReactiveFragment.Changing">
+            <summary>
+            Represents an Observable that fires *before* a property is about to
+            be changed.
+            </summary></member>
+        <member name="P:ReactiveUI.AndroidSupport.ReactiveFragment.Changed">
+            <summary>
+            Represents an Observable that fires *after* a property has changed.
+            </summary></member>
+        <member name="M:ReactiveUI.AndroidSupport.ReactiveFragment.SuppressChangeNotifications">
+            <summary>
+            When this method is called, an object will not fire change
+            notifications (neither traditional nor Observable notifications)
+            until the return value is disposed.
+            </summary>
+            <returns>An object that, when disposed, reenables change
+            notifications.</returns></member>
+        <member name="T:ReactiveUI.AndroidSupport.ReactiveActionBarActivity`1">
+            <summary>
+            This is an Activity that is both an Activity and has ReactiveObject powers
+            (i.e. you can call RaiseAndSetIfChanged)
+            </summary></member>
+        <member name="T:ReactiveUI.AndroidSupport.ReactiveActionBarActivity">
+            <summary>
+            This is an Activity that is both an Activity and has ReactiveObject powers
+            (i.e. you can call RaiseAndSetIfChanged)
+            </summary></member>
+        <member name="P:ReactiveUI.AndroidSupport.ReactiveActionBarActivity.Changing">
+            <summary>
+            Represents an Observable that fires *before* a property is about to
+            be changed.
+            </summary></member>
+        <member name="P:ReactiveUI.AndroidSupport.ReactiveActionBarActivity.Changed">
+            <summary>
+            Represents an Observable that fires *after* a property has changed.
+            </summary></member>
+        <member name="M:ReactiveUI.AndroidSupport.ReactiveActionBarActivity.SuppressChangeNotifications">
+            <summary>
+            When this method is called, an object will not fire change
+            notifications (neither traditional nor Observable notifications)
+            until the return value is disposed.
+            </summary>
+            <returns>An object that, when disposed, reenables change
+            notifications.</returns></member>
+    </members>
+</doc>

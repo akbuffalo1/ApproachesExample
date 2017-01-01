@@ -1,13 +1,13 @@
 #Autosave files
 *~
-Components/
+#Components/
 #TigerApp.Droid/
 #TigerApp.iOS/
 #TigerApp.Shared/
 #build
 [Oo]bj/
 [Bb]in/
-packages/
+#packages/
 TestResults/
 
 # globs
