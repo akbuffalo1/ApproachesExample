@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+	<!-- MissionsList page -->
+	<dimen name="mission_list_item_left_icon_height">40dp</dimen>
+	<dimen name="mission_list_item_right_icon_height">20dp</dimen>
+	<dimen name="mission_list_item_separator_height">2dp</dimen>
+	<dimen name="mission_list_item_prize_text_size">16sp</dimen>
+	<dimen name="mission_list_item_description_text_size">20sp</dimen>
+
+	<!--Enable Notification Page-->
+	<dimen name="enable_notification_icon_size">90dp</dimen>
+	<dimen name="enable_notification_icon_padding_bot_top">40dp</dimen>
+	<dimen name="enable_notification_btn_height">40dp</dimen>
+	<dimen name="enable_notification_btn_text_size">10pt</dimen>
+	<dimen name="enable_notification_title_margin_top">90dp</dimen>
+	<dimen name="enable_notification_title_text_size">10pt</dimen>
+
+	<!--Coupon Page-->
+	<dimen name="coupon_numbers_height">60dp</dimen>
+	<dimen name="coupon_numbers_title_margin_top">10dp</dimen>
+  	<dimen name="avatar_list_items_spacing">15dp</dimen>
+
+	<!--Change Number Page-->
+	<dimen name="change_number_action_bar_text_size">22sp</dimen>
+	<dimen name="change_number_title_text_size">21sp</dimen>
+	<dimen name="change_number_entry_height">19sp</dimen>
+	
+	<!--Two city mission Page-->
+	<dimen name="two_city_mission_bottom_icon_size">100dp</dimen>
+	<dimen name="two_city_mission_main_icon_size">210dp</dimen>
+	<dimen name="two_city_mission_punti_icon_size">100dp</dimen>
+	<dimen name="two_city_mission_title_text_size">19sp</dimen>
+
+	<!--Tiger trotter mission Page-->
+	<dimen name="missione_tiger_trotter_bottom_city_list_height">110dp</dimen>
+	<dimen name="missione_tiger_trotter_title_text_size">18sp</dimen>
+	<dimen name="missione_tiger_trotter_bottom_city_list_width">105dp</dimen>
+	<dimen name="missione_tiger_trotter_city_address_text_size">16sp</dimen>
+	<dimen name="mission_trotter_action_bar_size">60dp</dimen>
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/layoutActionBar"
+        layout="@layout/layout_change_number_actionbar" />
+    <ImageView
+        android:id="@+id/ivMainImage"
+        android:src="@drawable/cambia_num_img"
+        android:layout_width="wrap_content"
+        android:layout_height="170dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="30dp"
+        android:layout_gravity="center" />
+    <tigerapp.droid.ui.TigerTextView
+        android:text="@string/change_number_instruction_description_1"
+        android:textSize="@dimen/change_number_title_text_size"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        app:font="fonts/FrutigerRegular.ttf" />
+    <tigerapp.droid.ui.TigerTextView
+        android:textSize="@dimen/change_number_title_text_size"
+        android:textColor="@android:color/black"
+        android:text="@string/change_number_instruction_description_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:font="fonts/FrutigerRegular.ttf" />
+    <tigerapp.droid.ui.TigerTextView
+        android:textSize="@dimen/change_number_title_text_size"
+        android:textColor="@android:color/black"
+        android:text="@string/change_number_instruction_description_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:font="fonts/FrutigerRegular.ttf" />
+</LinearLayout>

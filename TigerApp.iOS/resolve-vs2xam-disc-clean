@@ -1,0 +1,4 @@
+#!/bin/bash
+[ $# -ge 1 -a -f "$1" ] && input="$1" || input="-"
+cat $input_file | awk '/<InProject>.*<\/InProject>/{next} /<\/ImageAsset>/{next} 1' | sed -E 's/<ImageAsset(.*)>/<ImageAsset\1 \/>/g'
+

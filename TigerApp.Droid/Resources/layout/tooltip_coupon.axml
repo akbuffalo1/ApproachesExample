@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+  <FrameLayout android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="bottom"
+               android:layout_marginTop="60dp"
+               android:paddingTop="60dp"
+               android:paddingBottom="20dp"
+               android:paddingLeft="20dp"
+               android:paddingRight="20dp"
+               android:background="@drawable/mechanics_coupon_special_popup">
+    <tigerapp.droid.ui.TigerTextView
+          android:id="@+id/txt_tooltip_coupon_message"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:lineSpacingExtra="-10dp"
+          android:paddingBottom="5dp"
+          android:text="asdf asdf asdf asdf \n asdf sdf asdf asd\nfasd fasdfasd fa"
+          style="@style/DefaultTooltipText"/>
+  </FrameLayout>
+  <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="top"
+                android:orientation="horizontal">
+    <View android:id="@+id/v_tooltip_coupon_top_left"
+          android:layout_width="0dp"
+          android:layout_height="1dp"
+          android:layout_weight="1"/>
+    <ImageView android:id="@+id/img_tooltip_coupon_diamond"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:adjustViewBounds="true"
+               android:scaleType="centerInside"/>
+    <View android:id="@+id/v_tooltip_coupon_top_right"
+          android:layout_width="0dp"
+          android:layout_height="1dp"
+          android:layout_weight="1"/>
+  </LinearLayout>
+</FrameLayout>

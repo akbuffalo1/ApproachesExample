@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/imgTigerLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="-10dp"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F3F3F2">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:src="@drawable/tiger_title"
+                android:layout_gravity="center" />
+        </FrameLayout>
+        <ImageView
+            android:id="@+id/imgTigerLogoSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tiger_subtitle"
+            android:layout_gravity="center" />
+    </LinearLayout>
+    <tigerapp.droid.ui.TigerTextView
+        android:id="@+id/txtMainMsg"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        style="@style/PageDefaultText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgTigerLogo"
+        android:layout_above="@id/txtPhoneInput"
+        android:gravity="center"
+        android:text="@string/p_login_main_msg" />
+    <EditText
+        android:id="@+id/txtPhoneInput"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnSmsLogin"
+        android:layout_centerHorizontal="true"
+        android:drawableLeft="@drawable/btn_phone"
+        android:drawablePadding="5dp"
+        android:drawableStart="@drawable/btn_phone"
+        android:gravity="center"
+        android:hint="@string/hint_enter_phone"
+        android:inputType="phone"
+        android:minHeight="?android:attr/listPreferredItemHeightSmall"
+        android:textColor="@color/txt_black"
+        android:background="@drawable/txt_phone_input_back"
+        android:textColorHint="@color/txt_tip"
+        android:maxLength="10" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/horizontal_line"
+        android:layout_below="@id/txtPhoneInput"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="10dp" />
+    <tigerapp.droid.ui.TintableButton
+        android:id="@+id/btnSmsLogin"
+        style="@style/ButtonsText"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/txtBtnSmsHint"
+        android:text="@string/btn_sms_login"
+        android:background="@drawable/btn_sms"
+        app:tint="@drawable/btn_orange_colors_selector" />
+    <TextView
+        android:id="@+id/txtBtnSmsHint"
+        style="@style/PageButtonHintText"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/txtOr"
+        android:gravity="center"
+        android:text="@string/p_login_sms_button_hint" />
+    <tigerapp.droid.ui.TigerTextView
+        android:id="@+id/txtOr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnFacebookLogin"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:text="@string/p_login_txt_or"
+        android:textSize="10pt"
+        app:font="fonts/FrutigerMedium.ttf" />
+    <tigerapp.droid.ui.TintableButton
+        android:id="@+id/btnFacebookLogin"
+        style="@style/ButtonsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/btn_facebook_bottom_margin"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/btn_default_white"
+        app:tint="@drawable/btn_facebook_colors_selector"
+        android:text="@string/btn_facebook_login" />
+    <ImageView
+        android:id="@+id/btnNew"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/btn_home_new" />
+    <ImageView
+        android:id="@+id/btnHomeLocation"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/btn_home_location" />
+</RelativeLayout>

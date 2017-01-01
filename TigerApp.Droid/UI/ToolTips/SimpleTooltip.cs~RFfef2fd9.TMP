@@ -1,0 +1,788 @@
+﻿#region using
+
+using System;
+using Android.Animation;
+using Android.Content;
+using Android.Graphics;
+using Android.Graphics.Drawables;
+using Android.OS;
+using Android.Views;
+using Android.Views.Animations;
+using Android.Widget;
+using Java.Nio.Channels;
+using Object = Java.Lang.Object;
+
+#endregion
+
+namespace TigerApp.Droid.UI.ToolTips
+{
+    public class SimpleTooltip : Object, PopupWindow.IOnDismissListener
+    {
+        // Default Resources
+        private static readonly int DefaultPopupWindowStyleRes = Android.Resource.Attribute.PopupWindowStyle;
+        private static readonly int DefaultTextAppearanceRes = Resource.Style.simpletooltip_default;
+        private static readonly int DefaultBackgroundColorRes = Resource.Color.simpletooltip_background;
+        private static readonly int DefaultTextColorRes = Resource.Color.simpletooltip_text;
+        private static readonly int DefaultArrowColorRes = Resource.Color.simpletooltip_arrow;
+        private static readonly int DefaultMarginRes = Resource.Dimension.simpletooltip_margin;
+        private static readonly int DefaultPaddingRes = Resource.Dimension.simpletooltip_padding;
+        private static readonly int DefaultAnimationPaddingRes = Resource.Dimension.simpletooltip_animation_padding;
+        private static readonly int DefaultAnimationDurationRes = Resource.Integer.simpletooltip_animation_duration;
+
+//        private static ViewTreeObserver.IOnGlobalLayoutListener _showLayoutListener;
+//        private static ViewTreeObserver.IOnGlobalLayoutListener _arrowLayoutListener;
+//        private static ViewTreeObserver.IOnGlobalLayoutListener _animationLayoutListener;
+        private readonly ViewTreeObserver.IOnGlobalLayoutListener _mLocationLayoutListener;
+        private readonly ViewTreeObserver.IOnGlobalLayoutListener _autoDismissLayoutListener;
+       
+        private readonly View _anchorView;
+        private readonly bool _animated;
+        private readonly long _animationDuration;
+        private readonly float _animationPadding;
+        private readonly View _contentView;
+        private readonly Context _context;
+        private readonly bool _dismissOnInsideTouch;
+        private readonly bool _dismissOnOutsideTouch;
+        private readonly GravityFlags _gravity;
+        private readonly float _margin;
+        private readonly float _maxWidth;
+        private readonly bool _modal;
+        private readonly float _padding;
+        private readonly bool _showArrow;
+        private readonly string _text;
+        private readonly int _textViewId;
+        private readonly bool _transparentOverlay;
+        private readonly bool _drawOval;
+        private bool _dismissed;
+        private AnimatorSet _animator;
+        private ImageView _arrowView;
+        private View _contentLayout;
+        private IOnDismissListener _onDismissListener;
+        private IOnShowListener _onShowListener;
+        private View _overlay;
+        private PopupWindow _popupWindow;
+        private ViewGroup _rootView;
+        private RectF _anchorRect;
+        private ArrowView _arrow;
+        private ContentWrapper _wrapper;
+
+
+        private SimpleTooltip(Builder builder)
+        {
+            _context = builder.Context;
+            _gravity = builder.gravity;           
+            _dismissOnInsideTouch = builder.dismissOnInsideTouch;
+            _dismissOnOutsideTouch = builder.dismissOnOutsideTouch;
+            _modal = builder.modal;
+            _contentView = builder.contentView;
+            _textViewId = builder.TextViewId;
+            _text = builder.text;
+            _anchorView = builder._anchorView;
+            _transparentOverlay = builder.TransparentOverlayRenamed;
+            _maxWidth = builder.maxWidth;
+            _showArrow = builder.showArrow;
+            _animated = builder._animated;
+            _margin = builder.margin;
+            _drawOval = builder.drawOval;
+            _padding = builder.Adding;
+            _animationPadding = builder._animationPadding;
+            _animationDuration = builder._AnimationDuration;
+            _onDismissListener = builder.onDismissListener;
+            _onShowListener = builder.onShowListener;
+            _rootView = (ViewGroup)(_anchorView != null ? _anchorView.RootView : builder._rootView);
+
+            _mLocationLayoutListener = new LocationOnGlobalLayoutListener(this);
+//            _showLayoutListener = new ShowLayoutOnGlobalLayoutListener(this);
+//            _arrowLayoutListener = new ArrowOnGlobalLayoutListener(this);
+            _autoDismissLayoutListener = new AutoDismissOnGlobalLayoutListener(this);
+//            _animationLayoutListener = new AnimationOnGlobalLayoutListener(this);
+
+            Init();
+        }
+
+        public virtual bool Showing
+        {
+            get { return _popupWindow != null && _popupWindow.IsShowing; }
+        }
+
+        public void OnDismiss()
+        {
+            _dismissed = true;
+
+            if (Build.VERSION.SdkInt >= Build.VERSION_CODES.Honeycomb)
+            {
+                if (_animator != null)
+                {
+                    _animator.RemoveAllListeners();
+                    _animator.End();
+                    _animator.Cancel();
+                    _animator = null;
+                }
+            }
+
+            if (_rootView != null && _overlay != null)
+                _rootView.RemoveView(_overlay);
+
+            _rootView = null;
+            _overlay = null;
+
+            if (_onDismissListener != null)
+                _onDismissListener.OnDismiss(this);
+
+            _onDismissListener = null;
+
+            _popupWindow = null;
+        }
+
+        private void Init()
+        {
+            ConfigPopupWindow();
+            ConfigContentView();
+        }
+
+        private void ConfigPopupWindow()
+        {
+            _popupWindow = new PopupWindow(_context, null, DefaultPopupWindowStyleRes);
+            _popupWindow.SetOnDismissListener(this);
+            _popupWindow.Width = ViewGroup.LayoutParams.WrapContent;
+            _popupWindow.Height = ViewGroup.LayoutParams.WrapContent;
+            _popupWindow.SetBackgroundDrawable(new ColorDrawable(Color.Transparent));
+            _popupWindow.ClippingEnabled = false;
+        }
+
+
+        public virtual void Show()
+        {
+            VerifyDismissed();
+
+            _contentLayout.ViewTreeObserver.AddOnGlobalLayoutListener(_mLocationLayoutListener);
+            _contentLayout.ViewTreeObserver.AddOnGlobalLayoutListener(_autoDismissLayoutListener);
+
+            _rootView.Post(
+                () =>
+                {
+                    _popupWindow.ShowAtLocation(_rootView, GravityFlags.NoGravity, _rootView.Width, _rootView.Height);
+                });
+        }
+
+        private void VerifyDismissed()
+        {
+            if (_dismissed)
+                throw new ArgumentException("Tooltip has ben dismissed.");
+        }
+
+        private void CreateOverlay(RectF popupLocation)
+        {
+            _overlay = _transparentOverlay ? new View(_context) : new OverlayView(_context, _anchorView, _drawOval, popupLocation);
+            _overlay.LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent,
+                ViewGroup.LayoutParams.MatchParent);
+           
+            _overlay.Touch += OnOverlayTouch;
+            _rootView.AddView(_overlay);
+        }
+
+        private void OnOverlayTouch(object sender, View.TouchEventArgs e)
+        {
+            if (_dismissOnOutsideTouch)
+                Dismiss();
+
+            if (e.Event.Action == MotionEventActions.Up)
+                ((View)sender).PerformClick();
+
+            e.Handled = _modal;
+        }
+
+        private PointF CalculePopupLocation()
+        {
+            var location = new PointF();
+            
+            if (_anchorView != null)
+            {
+                _anchorRect = SimpleTooltipUtils.CalculeRectInWindow(_anchorView);
+            }
+            else
+            {
+                IWindowManager wm = (IWindowManager)_context.GetSystemService(Context.WindowService);
+                Point size = new Point();
+                wm.DefaultDisplay.GetSize(size);
+                _anchorRect = new RectF(size.X * 0.5f, size.Y * 0.5f, size.X * 0.5f, size.Y * 0.5f);
+            }
+
+            var anchorCenter = new PointF(_anchorRect.CenterX(), _anchorRect.CenterY());
+
+            var f = _gravity;
+
+            switch (f)
+            {
+                case GravityFlags.Start:
+                    location.X = _anchorRect.Left - _popupWindow.ContentView.Width - _margin;
+                    location.Y = anchorCenter.Y - _popupWindow.ContentView.Height / 2f;
+                    break;
+                case GravityFlags.End:
+                    location.X = _anchorRect.Right + _margin;
+                    location.Y = anchorCenter.Y - _popupWindow.ContentView.Height / 2f;
+                    break;
+                case GravityFlags.Top:
+                    location.X = anchorCenter.X - _popupWindow.ContentView.Width / 2f;
+                    location.Y = _anchorRect.Top - _popupWindow.ContentView.Height - _margin;
+                    break;
+                case GravityFlags.Bottom:
+                    location.X = anchorCenter.X - _popupWindow.ContentView.Width / 2f;
+                    location.Y = _anchorRect.Bottom + _margin;
+                    break;
+                case GravityFlags.Center:
+                    location.X = anchorCenter.X - _popupWindow.ContentView.Width / 2f;
+                    location.Y = anchorCenter.Y - _popupWindow.ContentView.Height / 2f;
+                    break;
+                default:
+                    throw new ArgumentException("Gravity must have be CENTER, START, END, TOP or BOTTOM.");
+            }
+
+            return location;
+        }
+
+        private void ConfigContentView()
+        {
+            if (_contentView is TextView)
+            {
+                var tv = (TextView)_contentView;
+                tv.Text = _text;
+            }
+            else
+            {
+                var tv = (TextView)_contentView.FindViewById(_textViewId);
+                if (tv != null)
+                    tv.Text = _text;
+            }
+
+            _contentView.SetPadding((int)_padding, (int)_padding, (int)_padding, (int)_padding);
+            /*
+                        var linearLayout = new FrameLayout(_context);
+                        linearLayout.LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WrapContent,
+                            ViewGroup.LayoutParams.WrapContent);
+                        /*linearLayout.Orientation = _arrowDirection == ArrowDrawable.LEFT || _arrowDirection == ArrowDrawable.RIGHT
+                            ? Orientation.Horizontal
+                            : Orientation.Vertical;#1#
+                        var layoutPadding = (int)(_animated ? _animationPadding : 0);
+                        linearLayout.SetPadding(layoutPadding, layoutPadding, layoutPadding, layoutPadding);
+
+                       linearLayout.AddView(_contentView);*/
+
+            var contentViewParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent,
+                ViewGroup.LayoutParams.WrapContent, 0);
+            contentViewParams.Gravity = GravityFlags.Center;
+            _contentView.LayoutParameters = contentViewParams;
+
+            _wrapper = new ContentWrapper(_contentView.Context);
+            _wrapper.LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WrapContent,
+                ViewGroup.LayoutParams.WrapContent);
+          
+            _arrow =new ArrowView(_contentView.Context);
+
+            _wrapper.AddView(_contentView);
+            _wrapper.Invalidate();
+
+            if (_dismissOnInsideTouch || _dismissOnOutsideTouch)
+                _contentView.Touch += OnPopUpTouch;
+
+
+            _contentLayout = _wrapper;
+            _contentLayout.Visibility = ViewStates.Invisible;
+            _popupWindow.ContentView = _contentLayout;
+        }
+
+        private void OnPopUpTouch(object sender, View.TouchEventArgs e)
+        {
+            var v = sender as View;
+            var @event = e.Event;
+            if (@event.GetX() > 0 && @event.GetX() < v.Width && @event.GetY() > 0 && @event.GetY() < v.Height)
+            {
+                if (_dismissOnInsideTouch)
+                {
+                    Dismiss();
+                    e.Handled = _modal;
+                    return;
+                }
+                e.Handled = false;
+                return;
+            }
+
+            if (@event.Action == MotionEventActions.Up)
+                v.PerformClick();
+
+            e.Handled = _modal;
+        }
+
+        public virtual void Dismiss()
+        {
+            if (_dismissed)
+                return;
+
+
+            _dismissed = true;
+            if (_popupWindow != null)
+                _popupWindow.Dismiss();
+        }
+
+        public virtual T FindViewById<T>(int id) where T : View
+        {
+            //noinspection unchecked
+            return (T)_contentLayout.FindViewById(id);
+        }
+
+        private void StartAnimation()
+        {
+            var property = _gravity == GravityFlags.Top || _gravity == GravityFlags.Bottom
+                ? "translationY"
+                : "translationX";
+
+            var anim1 = ObjectAnimator.OfFloat(_contentLayout, property, -_animationPadding, _animationPadding);
+            anim1.SetDuration(_animationDuration);
+            //anim1.SetInterpolator(AccelerateDecelerateInterpolator());
+
+            var anim2 = ObjectAnimator.OfFloat(_contentLayout, property, _animationPadding, -_animationPadding);
+            anim2.SetDuration(_animationDuration);
+            anim2.SetInterpolator(new AccelerateDecelerateInterpolator());
+
+            _animator = new AnimatorSet();
+            _animator.PlaySequentially(anim1, anim2);
+            _animator.AddListener(new AnimatorListenerAdapterAnonymousInnerClass(this));
+            _animator.Start();
+        }
+      
+        private class LocationOnGlobalLayoutListener : Object, ViewTreeObserver.IOnGlobalLayoutListener
+        {
+            private readonly SimpleTooltip _outerInstance;
+
+            public LocationOnGlobalLayoutListener(SimpleTooltip outerInstance)
+            {
+                _outerInstance = outerInstance;
+            }
+
+            public void OnGlobalLayout()
+            {
+                if (_outerInstance._dismissed)
+                {
+                    SimpleTooltipUtils.RemoveOnGlobalLayoutListener(_outerInstance._popupWindow.ContentView, this);
+                    return;
+                }
+
+                if (_outerInstance._maxWidth > 0 && _outerInstance._contentView.Width > _outerInstance._maxWidth)
+                {
+                    SimpleTooltipUtils.SetWidth(_outerInstance._contentView, _outerInstance._maxWidth);
+                    _outerInstance._popupWindow.Update(ViewGroup.LayoutParams.WrapContent,
+                        ViewGroup.LayoutParams.WrapContent);
+                    return;
+                }
+
+                SimpleTooltipUtils.RemoveOnGlobalLayoutListener(_outerInstance._popupWindow.ContentView, this);
+//                _outerInstance._popupWindow.ContentView.ViewTreeObserver.AddOnGlobalLayoutListener(_arrowLayoutListener);
+                var location = _outerInstance.CalculePopupLocation();
+                _outerInstance._popupWindow.ClippingEnabled = true;
+
+                _outerInstance._popupWindow.Update((int)location.X, (int)location.Y, _outerInstance._popupWindow.Width,
+                    _outerInstance._popupWindow.Height);
+
+                _outerInstance._popupWindow.ContentView.RequestLayout();
+
+                _outerInstance.CreateOverlay(new RectF((int)location.X, (int)location.Y, _outerInstance._popupWindow.Width,
+                    _outerInstance._popupWindow.Height));
+
+                if (_outerInstance._onShowListener != null)
+                    _outerInstance._onShowListener.OnShow(_outerInstance);
+
+                _outerInstance._onShowListener = null;
+                var contentsize = new Point(_outerInstance._popupWindow.ContentView.Width, _outerInstance._popupWindow.ContentView.Height);
+                _outerInstance._wrapper.SetPositions(
+                    new RectF(_outerInstance._contentLayout.GetX(), _outerInstance._contentLayout.GetY(),
+                       _outerInstance._contentLayout.Width, _outerInstance._contentLayout.Height), _outerInstance._anchorRect, contentsize);
+                
+                _outerInstance._contentLayout.Visibility = ViewStates.Visible;
+                _outerInstance._contentLayout.Alpha = 0.5f;
+
+            }
+        }
+
+        private class AnimationOnGlobalLayoutListener : Object, ViewTreeObserver.IOnGlobalLayoutListener
+        {
+            private readonly SimpleTooltip _outerInstance;
+
+            public AnimationOnGlobalLayoutListener(SimpleTooltip outerInstance)
+            {
+                _outerInstance = outerInstance;
+            }
+
+            public void OnGlobalLayout()
+            {
+                SimpleTooltipUtils.RemoveOnGlobalLayoutListener(_outerInstance._popupWindow.ContentView, this);
+                if (_outerInstance._dismissed)
+                    return;
+
+
+                if (_outerInstance._animated)
+                    _outerInstance.StartAnimation();
+
+                _outerInstance._popupWindow.ContentView.RequestLayout();
+            }
+        }
+
+        private class AnimatorListenerAdapterAnonymousInnerClass : AnimatorListenerAdapter
+        {
+            private readonly SimpleTooltip _outerInstance;
+
+            public AnimatorListenerAdapterAnonymousInnerClass(SimpleTooltip outerInstance)
+            {
+                _outerInstance = outerInstance;
+            }
+
+
+            public override void OnAnimationEnd(Animator animation)
+            {
+                if (!_outerInstance._dismissed && _outerInstance.Showing)
+                    animation.Start();
+
+            }
+        }
+
+        private class AutoDismissOnGlobalLayoutListener : Object, ViewTreeObserver.IOnGlobalLayoutListener
+        {
+            private readonly SimpleTooltip _outerInstance;
+
+            public AutoDismissOnGlobalLayoutListener(SimpleTooltip outerInstance)
+            {
+                _outerInstance = outerInstance;
+            }
+
+            public void OnGlobalLayout()
+            {
+                if (_outerInstance._dismissed)
+                {
+                    SimpleTooltipUtils.RemoveOnGlobalLayoutListener(_outerInstance._popupWindow.ContentView, this);
+                    return;
+                }
+
+                if (!_outerInstance._rootView.IsShown)
+                    _outerInstance.Dismiss();
+
+            }
+        }
+
+        public interface IOnDismissListener
+        {
+            void OnDismiss(SimpleTooltip tooltip);
+        }
+
+        public interface IOnShowListener
+        {
+            void OnShow(SimpleTooltip tooltip);
+        }
+
+
+        public class Builder
+        {
+            internal readonly Context Context;
+
+            public View _anchorView;
+            public View _rootView;
+            public bool _animated;
+            public long _AnimationDuration;
+            public float _animationPadding = -1;
+            public int _arrowColor;
+            public Drawable arrowDrawable;
+            public float arrowHeight;
+            public float arrowWidth;
+            public int backgroundColor;
+            public View contentView;
+            public bool dismissOnInsideTouch = true;
+            public bool dismissOnOutsideTouch = true;
+            public GravityFlags gravity = GravityFlags.Bottom;
+            public float margin = -1;
+            public float maxWidth;
+            public bool modal;
+            public IOnDismissListener onDismissListener;
+            public IOnShowListener onShowListener;
+            public float Adding = -1;
+            public bool showArrow = true;
+            public string text = "";
+            public int textColor;
+            public bool drawOval = true;
+            public bool TransparentOverlayRenamed = true;
+
+            internal int TextViewId = Android.Resource.Id.Text1;
+
+            public Builder(Context context)
+            {
+                Context = context;
+            }
+
+            public virtual SimpleTooltip Build()
+            {
+                ValidateArguments();
+                if (backgroundColor == 0)
+                {
+                    backgroundColor = SimpleTooltipUtils.GetColor(Context, DefaultBackgroundColorRes);
+                }
+                if (textColor == 0)
+                {
+                    textColor = SimpleTooltipUtils.GetColor(Context, DefaultTextColorRes);
+                }
+                if (contentView == null)
+                {
+                    var tv = new TextView(Context);
+                    SimpleTooltipUtils.SetTextAppearance(tv, DefaultTextAppearanceRes);
+                    tv.SetBackgroundColor(new Color(backgroundColor));
+                    tv.SetTextColor(new Color(textColor));
+                    contentView = tv;
+                }
+                if (_arrowColor == 0)
+                {
+                    _arrowColor = SimpleTooltipUtils.GetColor(Context, DefaultArrowColorRes);
+                }
+                if (margin < 0)
+                {
+                    margin = Context.Resources.GetDimension(DefaultMarginRes);
+                }
+                if (Adding < 0)
+                {
+                    Adding = Context.Resources.GetDimension(DefaultPaddingRes);
+                }
+                if (_animationPadding < 0)
+                {
+                    _animationPadding = Context.Resources.GetDimension(DefaultAnimationPaddingRes);
+                }
+                if (_AnimationDuration == 0)
+                {
+                    _AnimationDuration = Context.Resources.GetInteger(DefaultAnimationDurationRes);
+                }
+              
+                return new SimpleTooltip(this);
+            }
+
+            internal virtual void ValidateArguments()
+            {
+                if (Context == null)
+                {
+                    throw new ArgumentException("Context not specified.");
+                }
+                if (_anchorView == null && _rootView == null)
+                {
+                    throw new ArgumentException("Anchor view or RootView not specified.");
+                }
+            }
+
+
+            public virtual Builder ContentView(TextView textView)
+            {
+                contentView = textView;
+                TextViewId = 0;
+                return this;
+            }
+
+            public virtual Builder ContentView(View contentView, int textViewId)
+            {
+                this.contentView = contentView;
+                TextViewId = textViewId;
+                return this;
+            }
+
+            public virtual Builder ContentView(int contentViewId, int textViewId)
+            {
+                var inflater = (LayoutInflater)Context.GetSystemService(Context.LayoutInflaterService);
+                contentView = inflater.Inflate(contentViewId, null, false);
+                TextViewId = textViewId;
+                return this;
+            }
+
+            public virtual Builder ContentView(int contentViewId)
+            {
+                var inflater = (LayoutInflater)Context.GetSystemService(Context.LayoutInflaterService);
+                contentView = inflater.Inflate(contentViewId, null, false);
+                TextViewId = 0;
+                return this;
+            }
+
+
+            public virtual Builder DismissOnInsideTouch(bool dismissOnInsideTouch)
+            {
+                this.dismissOnInsideTouch = dismissOnInsideTouch;
+                return this;
+            }
+
+
+            public virtual Builder DismissOnOutsideTouch(bool dismissOnOutsideTouch)
+            {
+                this.dismissOnOutsideTouch = dismissOnOutsideTouch;
+                return this;
+            }
+
+
+            public virtual Builder Modal(bool modal)
+            {
+                this.modal = modal;
+                return this;
+            }
+
+
+            public virtual Builder Text(string text)
+            {
+                this.text = text;
+                return this;
+            }
+
+            public virtual Builder Text(int textRes)
+            {
+                text = Context.GetString(textRes);
+                return this;
+            }
+
+
+            public virtual Builder AnchorView(View anchorView)
+            {
+                _anchorView = anchorView;
+                return this;
+            }
+
+            public virtual Builder RootView(View rootView)
+            {
+                _rootView = rootView;
+                return this;
+            }
+
+
+            public virtual Builder Gravity(GravityFlags gravity)
+            {
+                this.gravity = gravity;
+                return this;
+            }    
+
+
+            public virtual Builder TransparentOverlay(bool transparentOverlay)
+            {
+                TransparentOverlayRenamed = transparentOverlay;
+                return this;
+            }
+
+            public virtual Builder MaxWidth(int maxWidthRes)
+            {
+                maxWidth = Context.Resources.GetDimension(maxWidthRes);
+                return this;
+            }
+
+
+            public virtual Builder MaxWidth(float maxWidth)
+            {
+                this.maxWidth = maxWidth;
+                return this;
+            }
+
+            public virtual Builder Animated(bool animated)
+            {
+                _animated = animated;
+                return this;
+            }
+
+            public virtual Builder AnimationPadding(float animationPadding)
+            {
+                _animationPadding = animationPadding;
+                return this;
+            }
+
+            public virtual Builder AnimationPadding(int animationPaddingRes)
+            {
+                _animationPadding = Context.Resources.GetDimension(animationPaddingRes);
+                return this;
+            }
+
+            public virtual Builder AnimationDuration(long animationDuration)
+            {
+                _AnimationDuration = animationDuration;
+                return this;
+            }
+
+            public virtual Builder Padding(float padding)
+            {
+                Adding = padding;
+                return this;
+            }
+
+            public virtual Builder Padding(int paddingRes)
+            {
+                Adding = Context.Resources.GetDimension(paddingRes);
+                return this;
+            }
+
+            public virtual Builder Margin(float margin)
+            {
+                this.margin = margin;
+                return this;
+            }
+
+            public virtual Builder Margin(int marginRes)
+            {
+                margin = Context.Resources.GetDimension(marginRes);
+                return this;
+            }
+
+            public virtual Builder TextColor(int textColor)
+            {
+                this.textColor = textColor;
+                return this;
+            }
+
+            public virtual Builder BackgroundColor(int backgroundColor)
+            {
+                this.backgroundColor = backgroundColor;
+                return this;
+            }
+
+
+            public virtual Builder ShowArrow(bool showArrow)
+            {
+                this.showArrow = showArrow;
+                return this;
+            }
+
+            public virtual Builder ArrowDrawable(Drawable arrowDrawable)
+            {
+                this.arrowDrawable = arrowDrawable;
+                return this;
+            }
+
+            public virtual Builder ArrowDrawable(int drawableRes)
+            {
+                arrowDrawable = SimpleTooltipUtils.GetDrawable(Context, drawableRes);
+                return this;
+            }
+
+            public virtual Builder ArrowColor(int arrowColor)
+            {
+                _arrowColor = arrowColor;
+                return this;
+            }
+
+            public virtual Builder ArrowHeight(float arrowHeight)
+            {
+                this.arrowHeight = arrowHeight;
+                return this;
+            }
+
+            public virtual Builder ArrowWidth(float arrowWidth)
+            {
+                this.arrowWidth = arrowWidth;
+                return this;
+            }
+
+            public virtual Builder OnDismissListener(IOnDismissListener onDismissListener)
+            {
+                this.onDismissListener = onDismissListener;
+                return this;
+            }
+
+            public virtual Builder OnShowListener(IOnShowListener onShowListener)
+            {
+                this.onShowListener = onShowListener;
+                return this;
+            }
+        }
+    }
+}

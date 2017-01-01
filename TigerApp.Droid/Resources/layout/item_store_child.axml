@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/back_gray"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="40dp"
+    android:paddingTop="10dp">
+    <tigerapp.droid.ui.TigerTextView
+        android:id="@+id/txtCaption"
+        style="@style/StoresListChildItemCaption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Emilia-Romanga"
+        android:textStyle="bold" />
+    <tigerapp.droid.ui.TigerTextView
+        android:id="@+id/txtAddress"
+        style="@style/StoresListChildItemInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Via Zamboni, 7 * 051 648 6586"
+        android:textStyle="bold" />
+    <tigerapp.droid.ui.TigerTextView
+        android:id="@+id/txtInfo"
+        style="@style/StoresListChildItemInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Works from 10:00 to 20:00 "
+        android:textStyle="bold" />
+</LinearLayout>

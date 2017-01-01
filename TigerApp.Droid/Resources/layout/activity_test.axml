@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="This is temporary Activity created for quick screen preview and ui testing at current project stage. Add here link to your screen"
+        android:textColor="#ff0000" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnClearAllFlags"
+            style="@style/DebugButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Clear all flags" />
+    <!--Button
+            android:id="@+id/btnRestartApp"
+            style="@style/DebugButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="RestartApp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/btnClearAllFlags"
+            android:layout_toEndOf="@+id/btnClearAllFlags" />-->
+        <Button
+            android:id="@+id/btnShowTooltip"
+            style="@style/DebugButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="ShowToolTip"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/btnClearAllFlags"
+            android:layout_toEndOf="@+id/btnClearAllFlags" />
+        <Button
+            android:id="@+id/btnClearTutorialFlags"
+            style="@style/DebugButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Clear tutorial flags"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/btnShowTooltip"
+            android:layout_toEndOf="@+id/btnShowTooltip" />
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/back_gray">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context="tigerapp.TestActivity">
+            <Button
+                android:id="@+id/btnHomePage"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Home Page" />
+            <Button
+                android:id="@+id/btnProductCataloguePage"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Products catalogue" />
+            <Button
+                android:id="@+id/btnAvatarWall"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Avatar Wall" />
+            <Button
+                android:id="@+id/btnScanReceipt"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Scan Receipt" />
+            <Button
+                android:id="@+id/btnEnableGeolocationPage"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Enable Geolocation" />
+            <Button
+                android:id="@+id/btnStoresList"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Stores List" />
+            <Button
+                android:id="@+id/btnSurveyMission"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Survey Mission" />
+            <Button
+                android:id="@+id/btnSMSEnrollment"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="SMS Enrollment" />
+            <Button
+                android:id="@+id/btnNicknameEnrollment"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Nickname Enrollment" />
+            <Button
+                android:id="@+id/btnCouponNumbersWithout"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Coupon Numbers - No coupons" />
+            <Button
+                android:id="@+id/btnCouponNumbersWith"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Coupon Numbers - 5 coupons" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ExpHome lev:"
+                    android:textSize="15sp" />
+                <Button
+                    android:id="@+id/btnExpHome1"
+                    style="@style/DebugButtons"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="1" />
+                <Button
+                    android:id="@+id/btnExpHome2"
+                    style="@style/DebugButtons"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="2" />
+                <Button
+                    android:id="@+id/btnExpHome3"
+                    style="@style/DebugButtons"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="3" />
+                <Button
+                    android:id="@+id/btnExpHome4"
+                    style="@style/DebugButtons"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="4" />
+                <Button
+                    android:id="@+id/btnExpHome5"
+                    style="@style/DebugButtons"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="5" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ScanMission lev:"
+                    android:textSize="15sp" />
+                <Button
+                    android:id="@+id/btnScanMission1"
+                    style="@style/DebugButtons"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="10eu" />
+                <Button
+                    android:id="@+id/btnScanMission2"
+                    style="@style/DebugButtons"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="22eu" />
+                <Button
+                    android:id="@+id/btnScanMission3"
+                    style="@style/DebugButtons"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="35eu" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/btnProfilePage"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Profile" />
+            <Button
+                android:id="@+id/btnSettingsPage"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Settings" />
+            <Button
+                android:id="@+id/btnCheckInMissionPage"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="CheckIn Mission Page" />
+        <!--  <Button
+                android:id="@+id/btnScanMissionPage"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Scan Mission Page" />-->
+            <Button
+                android:id="@+id/btnShareMissionPage"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Share Mission Page" />
+            <Button
+                android:id="@+id/btnEditProfileMissionPage"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Edit Profile Mission" />
+            <Button
+                android:id="@+id/btnStoreLocator"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Store Locator" />
+            <Button
+                android:id="@+id/btnEnableNotifications"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Enable Notifications" />
+            <Button
+                android:id="@+id/btnEditProfile"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Edit Profile" />
+            <Button
+                android:id="@+id/btnTwoCityMission"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Two City Mission" />
+            <Button
+                android:id="@+id/btnTigerTrotterMission"
+                style="@style/DebugButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Tiger Trotter Mission" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="7dp"
+    android:paddingRight="7dp"
+    android:paddingBottom="7dp">
+    <ImageButton
+        android:id="@+id/btnInfo"
+        android:layout_width="@dimen/actionbar_size"
+        android:layout_height="@dimen/actionbar_size"
+        android:layout_marginLeft="2dp"
+        android:scaleType="center"
+        android:background="@drawable/btn_image_white_trans_back_selector"
+        android:src="@drawable/ic_info" />
+    <ImageButton
+        android:id="@+id/ivQuit"
+        android:src="@drawable/coupon_05_button"
+        android:layout_width="@dimen/actionbar_size"
+        android:layout_height="@dimen/actionbar_size"
+        android:scaleType="fitXY"
+        android:layout_marginRight="2dp"
+        android:padding="12dp"
+        android:background="@drawable/btn_image_white_trans_back_selector"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true" />
+    <LinearLayout
+        android:id="@+id/relativeLayout"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivQuit"
+        android:layout_centerHorizontal="true">
+        <ImageView
+            android:id="@+id/imageView3"
+            android:src="@drawable/coupon_11"
+            android:layout_gravity="bottom"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="15dp" />
+        <tigerapp.droid.ui.TigerTextView
+            android:id="@+id/tvCouponPageTitle"
+            android:text="Questa è la tua sezione \n premi &amp; coupon"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="false"
+            app:font="fonts/FrutigerMedium.ttf" />
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/tvCouponSpecialiContainer"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/coupon_numbers_title_margin_top"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_centerHorizontal="true">
+        <ImageView
+            android:src="@drawable/coupon_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="5dp"
+            android:layout_alignBottom="@+id/tvCouponSpeciali"
+            android:layout_alignTop="@+id/tvCouponSpeciali" />
+        <tigerapp.droid.ui.TigerTextView
+            android:id="@+id/tvCouponSpeciali"
+            android:textSize="30sp"
+            android:paddingLeft="50dp"
+            android:paddingTop="25dp"
+            android:paddingBottom="15dp"
+            android:text="COUPON SORPRESA"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            app:font="fonts/TigerCandyRegular.ttf" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:scaleType="centerInside"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/coupon_12"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvCouponSpeciali"
+            android:layout_alignBottom="@+id/tvCouponSpeciali"
+            android:layout_alignTop="@+id/tvCouponSpeciali" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@+id/tvCouponSpecialiContainer"
+        android:layout_alignParentRight="true"
+        android:id="@+id/relativeLayout3">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/rlCouponViewpager"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_alignParentRight="true" />
+        <RelativeLayout
+            android:id="@+id/rlCouponViewpagerPlaceholder"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@+id/rlCouponViewpager">
+            <ImageView
+                android:id="@+id/rlCouponViewpagerIconPlaceholder"
+                android:src="@drawable/coupon_03"
+                android:layout_width="240dp"
+                android:layout_height="130dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+            <ImageView
+                android:id="@+id/rlCouponViewpagerPlane"
+                android:src="@drawable/coupon_04"
+                android:layout_width="145dp"
+                android:layout_height="100dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+            <tigerapp.droid.ui.TigerTextView
+                android:id="@+id/rlCouponViewpagerTitlePlaceholder"
+                android:text="Non hai ancora raggiunto \n premi speciali"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                app:font="fonts/FrutigerMedium.ttf" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout3"
+        android:layout_centerHorizontal="true">
+        <ImageView
+            android:src="@drawable/coupon_02"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_alignRight="@+id/textView2" />
+        <tigerapp.droid.ui.TigerTextView
+            android:id="@+id/textView2"
+            android:text="COUPON"
+            android:textColor="@android:color/black"
+            android:paddingTop="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="10dp"
+            android:textSize="30sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:font="fonts/TigerCandyRegular.ttf" />
+    </RelativeLayout>
+    <tigerapp.droid.ui.coupons.DynamicLayout
+        android:id="@+id/couponNumbersView"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/coupon_numbers_height"
+        android:layout_below="@+id/relativeLayout4"
+        android:layout_centerHorizontal="true" />
+    <tigerapp.droid.ui.TigerTextView
+        android:id="@+id/textView4"
+        android:textSize="26sp"
+        android:text="   Più ne collezioni più \n aumenta it tuo guadagno!"
+        android:textColor="@android:color/black"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/couponNumbersView"
+        android:layout_centerHorizontal="true"
+        app:font="fonts/TigerRegular.ttf" />
+</RelativeLayout>

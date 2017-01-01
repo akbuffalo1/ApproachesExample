@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<!--TODO leave it as it is or replace with ActionBar-->
+    <RelativeLayout
+        android:id="@+id/layoutActionBar"
+        android:layout_width="match_parent"
+        android:background="@drawable/back_gray"
+        android:layout_height="?android:attr/actionBarSize">
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/btn_tiger_back"
+            android:background="@drawable/btn_image_trans_back_selector"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp" />
+        <tigerapp.droid.ui.TigerTextView
+            android:id="@+id/txtCaption"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="ELENCO STORES"
+            style="@style/StoresListCaption" />
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/storesList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layoutActionBar"
+        tools:listitem="@layout/item_store_parent" />
+</RelativeLayout>

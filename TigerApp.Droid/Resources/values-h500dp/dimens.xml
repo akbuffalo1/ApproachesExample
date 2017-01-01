@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <dimen name="exp_progress_bar_width">150dp</dimen>
+    <dimen name="exp_progress_bar_height">150dp</dimen>
+
+    <dimen name="exp_scan_btn_size">50dp</dimen>
+    <dimen name="point_size">20dp</dimen>
+    <dimen name="points_container_height">50dp</dimen>
+    <dimen name="txt_exp_back_size">60dp</dimen>
+    <dimen name="txt_exp_back_width">60dp</dimen>
+    <dimen name="exp_max_value_text_size">12pt</dimen>
+    <dimen name="exp_app_value_text_size">9pt</dimen>
+    <dimen name="txt_app_ext_padding_top">0dp</dimen>
+    <dimen name="exp_message_text">13pt</dimen>
+
+    <dimen name="exp_progress_text_3d">39pt</dimen>
+    <dimen name="exp_progress_text_4d">31pt</dimen>
+    <dimen name="exp_progress_text_5d">29pt</dimen>
+    
+    <!-- units in pt, integer because in Android 4.1 Resources.GetDimension(Resource.Dimension.exp_app_max_text_3d) returns wrong size -->
+    <integer name="exp_app_max_text_3d">18</integer>
+    <integer name="exp_app_max_text_4d">11</integer>
+    <integer name="exp_app_max_text_5d">9</integer>
+
+	<!--Change Number Page-->
+	<dimen name="change_number_title_text_size">17sp</dimen>
+	<dimen name="change_number_entry_height">19sp</dimen>
+    <dimen name="two_city_mission_punti_icon_size">100dp</dimen>
+
+	<!--Two city mission Page-->
+    <dimen name="two_city_mission_bottom_icon_size">95dp</dimen>
+    <dimen name="two_city_mission_main_icon_size">260dp</dimen>
+    <dimen name="two_city_mission_title_text_size">24sp</dimen>
+
+    <!--Scan Mission Page-->
+    <dimen name="scan_mission_image_size">240dp</dimen>
+</resources>

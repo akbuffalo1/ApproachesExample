@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+    <RelativeLayout
+        android:id="@+id/layoutActionBar"
+        android:layout_width="match_parent"
+        android:background="@drawable/back_gray"
+        android:layout_height="@dimen/actionbar_size">
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/actionbar_size"
+            android:layout_height="@dimen/actionbar_size"
+            android:layout_centerVertical="true"
+            android:src="@drawable/btn_tiger_back"
+            android:scaleType="center"
+            android:background="@drawable/btn_image_actionbar_selector"
+            android:layout_marginLeft="5dp" />
+        <TextView
+            android:id="@+id/txtCaption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/edit_profile_caption"
+            style="@style/EditProfileCaption" />
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+        <EditText
+            android:id="@+id/nickNameText"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            style="@style/EditProfileEditText"
+            android:background="@drawable/edit_text_background"
+            android:textColorHint="#999999"
+            android:hint="@string/edit_profile_nickname" />
+        <EditText
+            android:id="@+id/nomeText"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@drawable/edit_text_background"
+            android:textColorHint="#999999"
+            style="@style/EditProfileEditText"
+            android:hint="@string/edit_profile_name" />
+        <EditText
+            android:id="@+id/cognomeText"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:textColorHint="#999999"
+            android:background="@drawable/edit_text_background"
+            style="@style/EditProfileEditText"
+            android:hint="@string/edit_profile_surname" />
+        <EditText
+            android:id="@+id/emailText"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:inputType="textEmailAddress"
+            android:textColorHint="#999999"
+            android:background="@drawable/edit_text_background"
+            style="@style/EditProfileEditText"
+            android:hint="@string/edit_profile_email" />
+        <EditText
+            android:id="@+id/phoneText"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@drawable/edit_text_background"
+            style="@style/EditProfileEditText"
+            android:textColorHint="#999999"
+            android:inputType="phone"
+            android:hint="@string/edit_profile_phone" />
+        <EditText
+            android:id="@+id/compleannoText"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:focusable="false"
+            style="@style/EditProfileEditText"
+            android:background="@drawable/edit_text_background"
+            android:textColorHint="#999999"
+            android:hint="@string/edit_profile_birthdate" />
+        <EditText
+              android:id="@+id/cityText"
+              android:layout_width="match_parent"
+              android:layout_height="64dp"
+              android:focusable="false"
+              style="@style/EditProfileEditText"
+              android:background="@drawable/edit_text_background"
+              android:textColorHint="#999999"
+              android:hint="@string/edit_profile_city" />
+    </LinearLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/compliteButton"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:background="@drawable/btn_default_grey">
+        <tigerapp.droid.ui.TigerTextView
+            android:id="@+id/txtButtonLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:lineSpacingExtra="-10dp"
+            android:text="@string/edit_profile_confirm_button_text1"
+            style="@style/EditProfileButtonLarge" />
+        <tigerapp.droid.ui.TigerTextView
+            android:id="@+id/txtButtonSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="@string/edit_profile_confirm_button_text2"
+            style="@style/EditProfileButtonSmall"
+            android:layout_below="@+id/txtButtonLarge" />
+        <tigerapp.droid.ui.TigerTextView
+            android:id="@+id/txtButtonConfirm"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="@string/edit_profile_confirm_button_confirm"
+            style="@style/EditProfileButtonLarge" />
+    </RelativeLayout>
+</LinearLayout>

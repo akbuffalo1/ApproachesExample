@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Home Page-->
+    <string name="tut_home_s1">Ciao! iscriviti al
+    programma Tiger per
+    iniziare a collezionare
+    i premi!</string>
+    <string name="tut_home_s2">scopri qui le ultime
+novita Tiger!</string>
+    <string name="tut_home_s3">scopri gli store Tiger
+piu vicino a te!</string>
+
+    <!--ExpPage-->
+    <string name="tut_exp_s0">Ciao! benvenuto nel
+programma Tiger loyalty.
+Per te un extra bonus di
+benvenuto di 50 punti!</string>
+    <string name="tut_exp_s1">Raccogli i punti:
+ogni volta che completi
+il cerchio, ricevi un
+coupon di sconto!</string>
+    <string name="tut_exp_s2">Completa le missioni
+e raggiungi la soglia
+indicata per ricevere
+un coupon sopresa e
+passare di livello!
+
+Ogni pallino e una
+missione da compiere</string>
+    <string name="tut_exp_s3">qui accedi al tuo profilo:
+scegli un nuovo avatar,
+vedi i tuoi coupon e
+scopri i badge che hai
+accumulato!</string>
+    <string name="tut_exp_s4">qui carica i tuoi scontrini
+per accumulare punti.
+
+Ogni euro di spesa vale
+10 punti!</string>
+    <string name="tut_exp_s5">qui scopi le missioni
+Tiger e i punti che
+puoi accumulare!</string>
+
+<string name="tut_exp_s6">scopri le ultime novità
+Tiger e vota i nuovi
+prodotti a catalogo, ogni
+voto vale un punto!</string>
+
+    <string name="tut_coupon_s1">Ogni volta che passi
+di livello raggiungi un
+coupon speciale da
+bruciare in store:
+gioca le missioni Tiger
+e raggiungi le soglie
+stabilite per passare
+di livello!</string>
+    <string name="tut_coupon_s2">Ogni volta che completi
+il cerchio con i tuoi
+punti ricevi un coupon
+di sconto da bruciare in
+store: piu ne collezioni
+piu guadagni!</string>
+
+    <string name="tut_profile_s1">clicca sul tuo avatar
+per sceglierne un altro!</string>
+    <string name="tut_profile_s2">Gioca con Tiger per
+vincere i tuoi badge!</string>
+    <string name="tut_profile_s3">scopri i tuoi coupon
+e bruciali in store</string>
+    <string name="tut_profile_s4">Completa e verifica i
+tuoi dati per completare
+una missione!</string>
+</resources>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<item name="match_parent" format="integer" type="dimen">-1</item>
+	<item name="wrap_content" format="integer" type="dimen">-2</item>
+
+	<dimen name="btn_default_text">15pt</dimen>
+	<dimen name="page_default_text">15pt</dimen>
+	<dimen name="product_name_text">15pt</dimen>
+	<dimen name="product_price_text">11pt</dimen>
+	<dimen name="product_card_navigate_text">13pt</dimen>
+	<dimen name="page_button_hint_text">8pt</dimen>
+	<dimen name="stores_list_caption">16pt</dimen>
+	<dimen name="settings_list_caption">13pt</dimen>
+	<dimen name="stores_list_parent_item_caption">14pt</dimen>
+	<dimen name="stores_list_child_item_caption">14pt</dimen>
+	<dimen name="stores_list_child_item_info">8pt</dimen>
+	<dimen name="settings_list_item">10pt</dimen>
+	<dimen name="alert_text_size">11pt</dimen>
+	<dimen name="actionbar_size">54dp</dimen>
+
+	<dimen name="popup_tetx">15pt</dimen>
+	<dimen name="privacy_information_caption">11pt</dimen>
+	<dimen name="privacy_information_text">10pt</dimen>
+	<dimen name="edit_profile_mission_caption">14pt</dimen>
+	<dimen name="edit_profile_mission_text">15pt</dimen>
+	<dimen name="store_locator_input_text_size">9pt</dimen>
+	<dimen name="store_locator_store_info_start_padding">15dp</dimen>
+	<dimen name="store_locator_store_info_top_padding">15dp</dimen>
+
+  <dimen name="edit_profile_caption">11pt</dimen>
+  <dimen name="edit_profile_edit_text">10pt</dimen>
+  <dimen name="edit_profile_button_large">19pt</dimen>
+  <dimen name="edit_profile_button_small">15pt</dimen>
+	<!--page-Home-->
+	<dimen name="btn_facebook_bottom_margin">50dp</dimen>
+
+	<!--circular progress bar-->
+	<dimen name="default_stroke_width">7dp</dimen>
+	<dimen name="default_background_stroke_width">7dp</dimen>
+	<dimen name="exp_max_value_text_size">12pt</dimen>
+	<dimen name="exp_app_value_text_size">18pt</dimen>
+	<!-- MissionsList page -->
+	<dimen name="mission_list_item_left_icon_height">80dp</dimen>
+	<dimen name="mission_list_item_right_icon_height">40dp</dimen>
+	<dimen name="mission_list_item_separator_height">2dp</dimen>
+	<dimen name="mission_list_item_prize_text_size">22sp</dimen>
+	<dimen name="mission_list_item_description_text_size">28sp</dimen>
+
+	<!--HomeExpPage-->
+  <dimen name="exp_progress_bar_width">180dp</dimen>
+  <dimen name="exp_progress_bar_height">180dp</dimen>
+	<dimen name="exp_scan_btn_size">@dimen/wrap_content</dimen>
+	<dimen name="point_size">22dp</dimen>
+	<dimen name="point_margin_left">15dp</dimen>
+	<dimen name="points_container_height">70dp</dimen>
+	<dimen name="txt_exp_back_size">@dimen/wrap_content</dimen>
+  <dimen name="txt_exp_back_width">77dp</dimen>
+	<dimen name="txt_app_ext_padding_top">24dp</dimen>
+	<dimen name="exp_message_text">15pt</dimen>
+	<dimen name="exp_progress_text_3d">42pt</dimen>
+	<dimen name="exp_progress_text_4d">37pt</dimen>
+	<dimen name="exp_progress_text_5d">37pt</dimen>
+	<!-- units in pt, integer because in Android 4.1 Resources.GetDimension(Resource.Dimension.exp_app_max_text_3d) returns wrong size -->
+  	<integer name="exp_app_max_text_3d">18</integer>
+  	<integer name="exp_app_max_text_4d">13</integer>
+	<integer name="exp_app_max_text_5d">11</integer>
+
+	<!--Enable Notification Page-->
+	<dimen name="enable_notification_icon_size">120dp</dimen>
+	<dimen name="enable_notification_icon_padding_bot_top">50dp</dimen>
+	<dimen name="enable_notification_btn_height">60dp</dimen>
+	<dimen name="enable_notification_btn_text_size">14pt</dimen>
+	<dimen name="enable_notification_title_margin_top">70dp</dimen>
+	<dimen name="enable_notification_title_text_size">14pt</dimen>
+
+	<!--Coupon Page-->
+	<dimen name="coupon_numbers_height">@dimen/wrap_content</dimen>
+	<dimen name="coupon_numbers_title_margin_top">0dp</dimen>
+
+	<!--Change Number Page-->
+	<dimen name="change_number_action_bar_text_size">21sp</dimen>
+	<dimen name="change_number_title_text_size">18sp</dimen>
+	<dimen name="change_number_entry_height">20sp</dimen>
+	
+	<!-- Avatar Wall -->
+	<dimen name="avatar_holder_width">92dp</dimen>
+	<dimen name="avatar_holder_height">72dp</dimen>
+	<dimen name="avatar_list_item_height">108dp</dimen>
+	<dimen name="avatar_list_items_spacing">8dp</dimen>
+
+	<!--Two city mission Page-->
+	<dimen name="two_city_mission_bottom_icon_size">80dp</dimen>
+	<!--Scan Mission Page-->
+	<dimen name="scan_mission_image_size">240dp</dimen>
+
+</resources>

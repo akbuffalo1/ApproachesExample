@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="FrutigerMedium.otf">
+            <string>FrutigerNextLTW1G-MediumCn</string>
+            <string>FrutigerNextLTW1G-MediumCn</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AcceptEnrollmentConditionsViewController">
+            <connections>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jh4-JZ-aPQ">
+                    <rect key="frame" x="60" y="175" width="480" height="250"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEg-F6-laN">
+                            <rect key="frame" x="0.0" y="48" width="480" height="80"/>
+                            <string key="text">Selezionado registrati,
+acceti i nostri Termini di
+Servizio e L'Informativa
+sulla Privacy</string>
+                            <fontDescription key="fontDescription" name="FrutigerNextLTW1G-MediumCn" family="Frutiger Next LT W1G" pointSize="20"/>
+                            <color key="textColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ef5-mu-asa">
+                            <rect key="frame" x="24" y="176" width="432" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="uac-wB-Q46"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="FrutigerNextLTW1G-MediumCn" family="Frutiger Next LT W1G" pointSize="20"/>
+                            <state key="normal" title="Accetto" backgroundImage="GrayButtonBackground">
+                                <color key="titleColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="onAccetoClick:" destination="-1" eventType="touchUpInside" id="2RZ-8j-nzY"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ef5-mu-asa" secondAttribute="trailing" constant="24" id="HtS-ko-d55"/>
+                        <constraint firstItem="JEg-F6-laN" firstAttribute="leading" secondItem="Jh4-JZ-aPQ" secondAttribute="leading" id="KYe-LE-XKd"/>
+                        <constraint firstAttribute="bottom" secondItem="ef5-mu-asa" secondAttribute="bottom" constant="24" id="NLu-mc-uSf"/>
+                        <constraint firstItem="JEg-F6-laN" firstAttribute="top" secondItem="Jh4-JZ-aPQ" secondAttribute="top" constant="48" id="bFW-qM-xTB"/>
+                        <constraint firstItem="ef5-mu-asa" firstAttribute="top" secondItem="JEg-F6-laN" secondAttribute="bottom" constant="48" id="jPF-JU-unu"/>
+                        <constraint firstItem="ef5-mu-asa" firstAttribute="leading" secondItem="Jh4-JZ-aPQ" secondAttribute="leading" constant="24" id="qoM-QN-oaJ"/>
+                        <constraint firstAttribute="trailing" secondItem="JEg-F6-laN" secondAttribute="trailing" id="y4k-FN-ZHJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Jh4-JZ-aPQ" firstAttribute="centerY" secondItem="2" secondAttribute="centerY" id="C6a-e4-xBP"/>
+                <constraint firstItem="Jh4-JZ-aPQ" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="Ghh-wJ-0qe"/>
+                <constraint firstItem="Jh4-JZ-aPQ" firstAttribute="width" secondItem="2" secondAttribute="width" multiplier="0.8" id="am0-EB-atP"/>
+                <constraint firstItem="Jh4-JZ-aPQ" firstAttribute="height" secondItem="2" secondAttribute="height" multiplier="0.5" id="dhb-KT-fSk"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="dhb-KT-fSk"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="GrayButtonBackground" width="461" height="119"/>
+    </resources>
+</document>

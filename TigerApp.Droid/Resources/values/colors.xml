@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="btn_light_text">#ffffff</color>
+	<color name="transparent">#00ffffff</color>
+	<color name="back_product_card">#ffffff</color>
+	<color name="txt_black">#000000</color>
+	<color name="txt_page_default">#4D4D4D</color>
+	<color name="txt_tip">#999999</color>
+	<color name="home_divider_color">#E0E0F4</color>
+	<color name="txt_or">#4D4D4D</color>
+	<color name="back_black">#000000</color>
+	<color name="back_transparent">#7f000000</color>
+	<color name="semi_transparent_black">#80000000</color>
+	<color name="back_yellow">#F6E277</color>
+	<color name="back_gray">#F3F3F2</color>
+	<color name="mission_action_bar_gray">#F8F7F5</color>
+	<color name="white">#ffffff</color>
+	<color name="store_locator_text_color">#000000</color>
+	<color name="store_locator_text_hint_color">#666666</color>
+	<color name="store_locator_input_back">#ccffffff</color>
+	<color name="store_locator_selected_list_item_back">#E9E9E9</color>
+	<color name="store_locator_unselected_list_item_back">#ffffff</color>
+	<color name="store_locator_unselected_item_text">#666666</color>
+	<color name="store_locator_selected_item_text">#000000</color>
+	<color name="mission_item_selected">#FFFFFF</color>
+	<color name="mission_item_unselected">#FFFFFF</color>
+	<color name="scan_mission_1">#9fe6df</color>
+	<color name="scan_mission_2">#b8aff7</color>
+	<color name="scan_mission_3">#a3d3fa</color>
+	<color name="back_all_products_voted_page">#FFCD8F</color>
+  <color name="qrcode_popup_yellow">#EDED74</color>
+
+	<color name="avatar_holder_default_back">#d4e6e4</color>
+	<color name="avatar_holder_selected_back">#ccff66</color>
+  
+  <color name="flat_button_pressed">#66999999</color>
+</resources>

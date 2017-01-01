@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mission_trotter_action_bar_size"
+        android:background="@drawable/back_white"
+        android:orientation="horizontal"
+        android:id="@+id/rlActionBarContainer">
+        <ImageView
+            android:id="@+id/btnBack"
+            android:src="@drawable/btn_tiger_back"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+        <TextView
+            android:text="@string/missione_tiger_trotter_actionbar_text"
+            android:textSize="@dimen/change_number_action_bar_text_size"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/btnBack"
+            android:layout_toEndOf="@+id/btnBack"
+            app:font="fonts/TigerCandyRegular.ttf" />
+    </LinearLayout>
+    <ImageView
+        android:src="@drawable/tiger_trotter_img"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rlActionBarContainer"
+        android:id="@+id/imageView4"
+        android:layout_above="@+id/tvTitle" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:src="@drawable/missione_tiger_trotter_punti"
+        android:layout_width="@dimen/two_city_mission_punti_icon_size"
+        android:layout_height="@dimen/two_city_mission_punti_icon_size"
+        android:layout_alignBottom="@+id/imageView4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="75dp" />
+    <TextView
+        android:text="@string/missione_tiger_trotter_title_text"
+        android:id="@+id/tvTitle"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/missione_tiger_trotter_title_text_size"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textAlignment="center"
+        app:font="fonts/TigerRegular.ttf"
+        android:layout_above="@+id/lvTigerTrottenCityListView"
+        android:layout_centerHorizontal="true" />
+    <HorizontalScrollView
+        android:id="@+id/lvTigerTrottenCityListView"
+        android:background="#efefef"
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/missione_tiger_trotter_bottom_city_list_height"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true">
+        <tigerapp.droid.ui.coupons.DynamicLayout
+            android:id="@+id/checkinListView"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </HorizontalScrollView>
+</RelativeLayout>

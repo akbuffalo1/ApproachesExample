@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Base application theme. -->
+	<style name="AppTheme" parent="Theme.AppCompat.Light">
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+    <item name="windowActionBar">false</item>
+	</style>
+  
+  <style name="SplashTheme" parent="Theme.AppCompat.Light">
+	  <item name="android:windowNoTitle">true</item>
+	  <item name="android:windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+    <item name="windowActionBar">false</item>
+    <item name="android:windowBackground">@drawable/back_splash</item>
+  </style>
+  
+	<style name="ButtonsText">
+		<item name="android:textSize">@dimen/btn_default_text</item>
+		<item name="android:textColor">@color/btn_light_text</item>
+		<item name="font">fonts/TigerRegular.ttf</item>
+	</style>
+	<style name="ButtonPhoneText">
+		<item name="android:textSize">7pt</item>
+		<item name="android:textColor">#666666</item>
+		<item name="font">fonts/FrutigerRegular.ttf</item>
+	</style>
+	<style name="ProductName">
+		<item name="android:textSize">@dimen/product_name_text</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="font">fonts/TigerRegular.ttf</item>
+	</style>
+	<style name="ProductPrice">
+		<item name="android:textSize">@dimen/product_price_text</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="font">fonts/FrutigerRegular.ttf</item>
+	</style>
+	<style name="ProductCardNavigate">
+		<item name="android:textSize">@dimen/product_card_navigate_text</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="font">fonts/TigerRegular.ttf</item>
+	</style>
+	<style name="PageDefaultText">
+		<item name="android:textSize">@dimen/page_default_text</item>
+		<item name="android:textColor">@color/txt_page_default</item>
+		<item name="android:lineSpacingExtra">-10dp</item>
+		<item name="font">fonts/TigerRegular.ttf</item>
+	</style>
+	<style name="PageDefaultTextBlack">
+		<item name="android:textSize">@dimen/page_default_text</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="android:lineSpacingExtra">-10dp</item>
+		<item name="font">fonts/TigerRegular.ttf</item>
+	</style>
+	<style name="StoreLocatorInputText">
+		<item name="android:textSize">@dimen/page_default_text</item>
+		<item name="android:textColor">@color/store_locator_text_color</item>
+		<item name="android:lineSpacingExtra">-10dp</item>
+		<item name="font">fonts/FrutigerRegular.ttf</item>
+	</style>
+	<style name="StoreLocatorInputHintText">
+		<item name="android:textSize">@dimen/page_default_text</item>
+		<item name="android:textColor">@color/store_locator_text_hint_color</item>
+		<item name="android:lineSpacingExtra">-10dp</item>
+		<item name="font">fonts/FrutigerRegular.ttf</item>
+	</style>
+	<style name="PageButtonHintText">
+		<item name="android:textSize">@dimen/page_button_hint_text</item>
+		<item name="android:textColor">@color/txt_tip</item>
+		<item name="font">fonts/FrutigerRegular.ttf</item>
+	</style>
+	<style name="ExpMessageText">
+		<item name="android:textSize">@dimen/exp_message_text</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="android:lineSpacingExtra">-13dp</item>
+		<item name="font">fonts/TigerRegular.ttf</item>
+	</style>
+	<style name="StoresListCaption">
+		<item name="android:textSize">@dimen/stores_list_caption</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="font">fonts/TigerCandyRegular.ttf</item>
+	</style>
+	<style name="StoresListParentItemCaption">
+		<item name="android:textSize">@dimen/stores_list_parent_item_caption</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="font">fonts/TigerCandyRegular.ttf</item>
+	</style>
+	<style name="StoresListChildItemCaption">
+		<item name="android:textSize">@dimen/stores_list_child_item_caption</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="font">fonts/TigerRegular.ttf</item>
+	</style>
+	<style name="StoresListChildItemInfo">
+		<item name="android:textSize">@dimen/stores_list_child_item_info</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="font">fonts/FrutigerRegular.ttf</item>
+	</style>
+	<style name="SetingsListCaption">
+		<item name="android:textSize">@dimen/settings_list_caption</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="font">fonts/TigerCandyRegular.ttf</item>
+	</style>
+	<style name="SettingsListItem">
+		<item name="android:textSize">@dimen/settings_list_item</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="font">fonts/FrutigerRegular.ttf</item>
+	</style>
+	<style name="PopupText">
+		<item name="android:textSize">@dimen/popup_tetx</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="font">fonts/TigerRegular.ttf</item>
+	</style>
+	<style name="PrivacyInformationCaption">
+		<item name="android:textSize">@dimen/privacy_information_caption</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="font">fonts/TigerCandyRegular.ttf</item>
+	</style>
+	<style name="PrivacyInformationText">
+		<item name="android:textSize">@dimen/privacy_information_text</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="font">fonts/FrutigerRegular.ttf</item>
+	</style>
+	<style name="EditProfileMissionCaption">
+		<item name="android:textSize">@dimen/edit_profile_mission_caption</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="font">fonts/TigerCandyRegular.ttf</item>
+	</style>
+	<style name="EditProfileMissionText">
+		<item name="android:textSize">@dimen/edit_profile_mission_text</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="font">fonts/TigerRegular.ttf</item>
+	</style>
+  <style name="EditProfileCaption">
+    <item name="android:textSize">@dimen/edit_profile_caption</item>
+    <item name="android:textColor">@color/txt_black</item>
+    <item name="font">fonts/TigerCandyRegular.ttf</item>
+  </style>
+  <style name="EditProfileEditText">
+    <item name="android:textSize">@dimen/edit_profile_edit_text</item>
+    <item name="android:textColor">@color/txt_black</item>
+    <item name="font">fonts/FrutigerMedium.ttf</item>
+  </style>
+
+  <style name="EditProfileButtonLarge">
+    <item name="android:textSize">@dimen/edit_profile_button_large</item>
+    <item name="android:textColor">@color/btn_light_text</item>
+    <item name="font">fonts/TigerRegular.ttf</item>
+  </style>
+  <style name="EditProfileButtonSmall">
+    <item name="android:textSize">@dimen/edit_profile_button_small</item>
+    <item name="android:textColor">@color/btn_light_text</item>
+    <item name="font">fonts/TigerRegular.ttf</item>
+  </style>
+  <style name="AlertStyle">
+		<item name="android:windowFrame">@null</item>
+		<item name="android:windowBackground">@color/white</item>
+		<item name="android:windowIsFloating">true</item>
+		<item name="android:windowContentOverlay">@color/white</item>
+		<item name="android:windowTitleStyle">@null</item>
+		<item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+		<item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+		<item name="android:backgroundDimEnabled">true</item>
+		<item name="android:background">@color/white</item>
+	</style>
+	<style name="AlertTextStyle">
+		<item name="android:textSize">@dimen/alert_text_size</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="font">fonts/FrutigerMedium.ttf</item>
+	</style>
+	<style name="ExpMaxValueStyle">
+		<item name="android:textSize">@dimen/exp_max_value_text_size</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="font">fonts/TigerCandyRegular.ttf</item>
+	</style>
+	<style name="ExpAppValueStyle">
+		<item name="android:textSize">@dimen/exp_app_value_text_size</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="font">fonts/TigerCandyRegular.ttf</item>
+	</style>
+	<style name="DebugButtons">
+		<item name="android:textSize">10sp</item>
+		<item name="android:maxHeight">30dp</item>
+	</style>
+	<style name="ImageTutorialStyle">
+		<item name="android:windowFrame">@null</item>
+		<item name="android:windowBackground">@color/transparent</item>
+		<item name="android:windowIsFloating">false</item>
+		<item name="android:windowContentOverlay">@color/transparent</item>
+		<item name="android:windowTitleStyle">@null</item>
+		<item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+		<item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+		<item name="android:backgroundDimEnabled">true</item>
+		<item name="android:background">@color/transparent</item>
+	</style>
+  <style name="FlatButton" parent="Theme.AppCompat.Light">
+    <item name="colorControlHighlight">@color/flat_button_pressed</item>
+  </style>
+	<!-- MissionsList page -->
+	<style name="MissionListItemPrizeText">
+		<item name="android:textSize">@dimen/mission_list_item_prize_text_size</item>
+		<item name="android:textColor">@color/mission_list_item_prize_text_color</item>
+		<item name="font">fonts/TigerRegular.ttf</item>
+	</style>
+	<style name="MissionListItemDescriptionText">
+		<item name="android:textSize">@dimen/mission_list_item_description_text_size</item>
+		<item name="android:textColor">@color/mission_list_item_description_text_color</item>
+		<item name="font">fonts/TigerRegular.ttf</item>
+	</style>
+	<style name="MissionListItemViewHolder">
+		<item name="android:background">@drawable/mission_list_item_background_color</item>
+	</style>
+  <style name="TransparentProgressStyle" parent="AppTheme">
+    <item name="android:windowFrame">@null</item>
+    <item name="android:windowBackground">@color/transparent</item>
+    <item name="android:windowIsFloating">true</item>
+    <item name="android:windowContentOverlay">@color/transparent</item>
+    <item name="android:windowTitleStyle">@null</item>
+    <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+    <item name="android:backgroundDimEnabled">false</item>
+    <item name="android:background">@color/transparent</item>
+  </style>
+	<style name="PageMissionText">
+		<item name="android:textSize">15pt</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="android:lineSpacingExtra">-10dp</item>
+		<item name="font">fonts/TigerRegular.ttf</item>
+	</style>
+</resources>

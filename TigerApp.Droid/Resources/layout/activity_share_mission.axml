@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fadingEdge="none"
+    android:fillViewport="true">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+        <include
+            layout="@layout/shared_mission_action_bar" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+            <ImageView
+                android:id="@+id/imgShareMission"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="250dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/sharefb_01" />
+            <tigerapp.droid.ui.TigerTextView
+                android:id="@+id/txtShareMissionImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgShareMission"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textSize="13pt"
+                android:textColor="@android:color/black"
+                android:text="Salvadanaio Ananas"
+                app:font="fonts/TigerRegular.ttf" />
+            <ImageView
+                android:layout_width="128dp"
+                android:layout_height="146dp"
+                android:layout_marginBottom="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignBottom="@id/txtShareMissionImage"
+                android:src="@drawable/checkin_02" />
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="139dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignBottom="@id/txtShareMissionImage"
+                android:src="@drawable/sharefb_03" />
+        </RelativeLayout>
+        <tigerapp.droid.ui.TigerTextView
+            android:id="@+id/txtShareMissionMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textSize="@dimen/stores_list_caption"
+            android:textColor="@android:color/black"
+            app:font="fonts/TigerRegular.ttf" />
+        <Button
+            android:id="@+id/btnShareMissionCompleteCommand"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_sms_login"
+            android:text="Completa la missione"
+            android:textSize="@dimen/btn_default_text"
+            android:textColor="@android:color/white"
+            app:font="fonts/TigerRegular.ttf" />
+    </LinearLayout>
+</ScrollView>

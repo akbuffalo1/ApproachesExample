@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "313597449559",
+    "project_id": "tiger-4customer"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313597449559:android:97a2c38b39437cc0",
+        "android_client_info": {
+          "package_name": "com.byters.TigerApp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX8aG4sWq21xH3tLC5I3S02solgGbseno"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

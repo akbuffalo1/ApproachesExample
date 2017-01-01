@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Avatar Wall -->
+    <dimen name="avatar_holder_width">144dp</dimen>
+    <dimen name="avatar_holder_height">108dp</dimen>
+    <dimen name="avatar_list_item_height">125dp</dimen>
+
+
+</resources>

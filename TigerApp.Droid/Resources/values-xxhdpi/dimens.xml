@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- MissionsList page -->
+	<dimen name="mission_list_item_left_icon_height">60dp</dimen>
+	<dimen name="mission_list_item_right_icon_height">30dp</dimen>
+	<dimen name="mission_list_item_separator_height">2dp</dimen>
+	<dimen name="mission_list_item_prize_text_size">24sp</dimen>
+	<dimen name="mission_list_item_description_text_size">28sp</dimen>
+</resources>

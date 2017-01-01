@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:id="@+id/layoutAllVoted"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <View
+            android:id="@+id/topBack"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/back_all_products_voted_page" />
+        <ImageView
+            android:id="@+id/imgTigerLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:paddingTop="15dp"
+            android:src="@drawable/tiger_title" />
+        <ImageView
+            android:id="@+id/imgTigerLogoSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgTigerLogo"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:src="@drawable/tiger_subtitle" />
+        <ImageView
+            android:id="@+id/imgFlags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/element3" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/back_all_products_voted_page" />
+        <tigerapp.droid.ui.TigerTextView
+            android:id="@+id/txtMainMsg"
+            style="@style/PageDefaultTextBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="100dp"
+            android:gravity="center"
+            android:text="@string/msg_new_products_soon" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/txtMainMsg"
+            android:layout_below="@id/topBack"
+            android:paddingBottom="30dp"
+            android:paddingTop="30dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/elements1" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:paddingBottom="40dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/elements2" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="20dp"
+                android:paddingTop="30dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_page_all_products_voted" />
+        </RelativeLayout>
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_image_gray_trans_back_selector"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/ic_arrow_right" />
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="25dp"
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/img_big_arrow_to_right" />
+    </RelativeLayout>
+  <!--  <include
+        layout="@layout/product_card" /> -->
+    <tigerapp.droid.ui.swipecards.CardStack
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="-5dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:padding="-5dp"
+        app:stackMargin="0" />
+    <ImageButton
+        android:id="@+id/btnInfo"
+        android:layout_width="@dimen/actionbar_size"
+        android:layout_height="@dimen/actionbar_size"
+        android:layout_marginLeft="2dp"
+        android:scaleType="center"
+        android:background="@drawable/btn_image_white_trans_back_selector"
+        android:src="@drawable/ic_info" />
+    <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+</RelativeLayout>

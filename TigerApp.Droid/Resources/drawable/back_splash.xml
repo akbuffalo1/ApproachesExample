@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--we can put here some tiled texture-->
+    <!--
+    <item>
+       <bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+               android:src="@drawable/tile_image"
+               android:tileMode="repeat"/>
+    </item>
+       -->
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+               android:shape="rectangle">
+            <solid android:color="#ffffff"/>
+        </shape>
+    </item>
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/tiger_logo"/>
+    </item>
+
+</layer-list>

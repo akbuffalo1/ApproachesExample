@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/actionBarSize"
+    android:background="@drawable/back_white">
+    <ImageView
+        android:id="@+id/btnBack"
+        android:src="@drawable/mission_15_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="270"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <tigerapp.droid.ui.TigerTextView
+        android:text="CAMBIA NUM."
+        android:textSize="@dimen/change_number_action_bar_text_size"
+        android:textColor="@android:color/black"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/btnBack"
+        android:layout_toEndOf="@+id/btnBack"
+        app:font="fonts/TigerCandyRegular.ttf" />
+    <LinearLayout
+        android:id="@+id/llApplyNextContainer"
+        android:orientation="horizontal"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/btnApplyNext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:padding="15dp"
+            android:src="@drawable/divisor_line" />
+        <ImageView
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
+            android:baselineAlignBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/checked_icon" />
+        <tigerapp.droid.ui.TigerTextView
+            tools:text="Fine"
+            android:id="@+id/tvApplyNext"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/change_number_action_bar_text_size"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:font="fonts/TigerRegular.ttf" />
+    </LinearLayout>
+</RelativeLayout>

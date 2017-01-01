@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="TigerBasic.otf">
+            <string>tiger-basic-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UnsupportedRegionViewController">
+            <connections>
+                <outlet property="CloseButton" destination="bHW-FV-WK6" id="name-outlet-bHW-FV-WK6"/>
+                <outlet property="bottomLabel" destination="NkM-l6-yQ3" id="ahZ-Gj-mrF"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPR-Xu-7Tj">
+                    <rect key="frame" x="0.0" y="113" width="320" height="341"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ci spiace," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJ6-pr-Hgs">
+                            <rect key="frame" x="252" y="115" width="97" height="38"/>
+                            <fontDescription key="fontDescription" name="tiger-basic-Regular" family="tiger-basic" pointSize="46"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="aJ6-pr-Hgs" firstAttribute="centerX" secondItem="EPR-Xu-7Tj" secondAttribute="centerX" id="YdN-C3-Mds"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="geo09" translatesAutoresizingMaskIntoConstraints="NO" id="lXU-uV-W5U">
+                    <rect key="frame" x="0.0" y="50" width="222" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="MjC-iA-Ega"/>
+                        <constraint firstAttribute="width" constant="222" id="bR7-Cx-oZE"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="geo10" translatesAutoresizingMaskIntoConstraints="NO" id="8Vf-V6-hBa">
+                    <rect key="frame" x="158" y="373" width="154" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="154" id="HGf-gS-AIv"/>
+                        <constraint firstAttribute="height" constant="128" id="uXI-Bi-hnv"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="il programma Tiger Italia Loyalty non è ancora disponibile nella tua zona" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkM-l6-yQ3">
+                    <rect key="frame" x="68" y="289" width="184.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHW-FV-WK6">
+                    <rect key="frame" x="287" y="28" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="25" id="g3a-9b-EZv"/>
+                        <constraint firstAttribute="height" constant="25" id="qGE-yT-TG5"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="coupon_05_button"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="NkM-l6-yQ3" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="1zQ-Mp-H2v"/>
+                <constraint firstAttribute="trailing" secondItem="bHW-FV-WK6" secondAttribute="trailing" constant="8" id="782-UK-tPo"/>
+                <constraint firstItem="EPR-Xu-7Tj" firstAttribute="centerY" secondItem="2" secondAttribute="centerY" id="9OZ-lW-4lF"/>
+                <constraint firstItem="EPR-Xu-7Tj" firstAttribute="leading" secondItem="lXU-uV-W5U" secondAttribute="trailing" constant="-222" id="Bhc-po-j3o"/>
+                <constraint firstItem="bHW-FV-WK6" firstAttribute="top" secondItem="2" secondAttribute="top" constant="28" id="Fgm-bq-XXB"/>
+                <constraint firstItem="EPR-Xu-7Tj" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="Fkw-gU-Hnx"/>
+                <constraint firstItem="EPR-Xu-7Tj" firstAttribute="top" secondItem="lXU-uV-W5U" secondAttribute="bottom" constant="-65" id="IpB-9S-HfE"/>
+                <constraint firstItem="8Vf-V6-hBa" firstAttribute="leading" secondItem="EPR-Xu-7Tj" secondAttribute="trailing" constant="-162" id="MXl-ZM-bX2"/>
+                <constraint firstItem="NkM-l6-yQ3" firstAttribute="top" secondItem="aJ6-pr-Hgs" secondAttribute="bottom" constant="16" id="cd4-bV-mkr"/>
+                <constraint firstItem="EPR-Xu-7Tj" firstAttribute="width" secondItem="2" secondAttribute="width" id="h23-Sf-VZ9"/>
+                <constraint firstItem="8Vf-V6-hBa" firstAttribute="top" secondItem="EPR-Xu-7Tj" secondAttribute="bottom" constant="-81" id="hwL-JF-wze"/>
+                <constraint firstItem="EPR-Xu-7Tj" firstAttribute="height" secondItem="2" secondAttribute="height" multiplier="0.6" id="jIk-Ir-8vJ"/>
+                <constraint firstItem="aJ6-pr-Hgs" firstAttribute="top" secondItem="lXU-uV-W5U" secondAttribute="bottom" constant="50" id="sa9-m5-5p3"/>
+            </constraints>
+            <point key="canvasLocation" x="307" y="385"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="coupon_05_button" width="39" height="38"/>
+        <image name="geo09" width="336" height="190"/>
+        <image name="geo10" width="247" height="274"/>
+    </resources>
+</document>

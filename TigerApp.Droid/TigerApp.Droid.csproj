@@ -1,0 +1,1221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\xamstore-xamarin.auth.1.2.2\build\monoandroid\xamstore-xamarin.auth.props" Condition="Exists('..\packages\xamstore-xamarin.auth.1.2.2\build\monoandroid\xamstore-xamarin.auth.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{245E98EB-69AE-4EDB-91A5-1E9FEFAEDE18}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin\Debug</OutputPath>
+    <RootNamespace>TigerApp.Droid</RootNamespace>
+    <AssemblyName>TigerApp.Droid</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
+    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
+    <IntermediateOutputPath>obj\Debug</IntermediateOutputPath>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <AndroidKeyStore>True</AndroidKeyStore>
+    <AndroidSigningKeyStore>Tiger.keystore</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>TigerApp</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>Tiger</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>TigerApp</AndroidSigningKeyPass>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidSdkBuildToolsVersion>23.0.3</AndroidSdkBuildToolsVersion>
+    <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>TRACE;DEBUG;__ANDROID__;_CURRENT_ACTIVITY_;_TDES_AUTH_TOKEN_;_ENCRYPTION_;_NETWORK_;_PERMISSIONS_;_DL_CACHE_;_PHONE_CALL_;_REACTIVEUI_;_OAUTH_</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <IntermediateOutputPath>obj\Debug</IntermediateOutputPath>
+    <ExternalConsole>false</ExternalConsole>
+    <Commandlineparameters>
+    </Commandlineparameters>
+    <RunWithWarnings>true</RunWithWarnings>
+    <MandroidExtraArgs>
+    </MandroidExtraArgs>
+    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
+    <AndroidKeyStore>True</AndroidKeyStore>
+    <AndroidSigningKeyStore>Tiger.keystore</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>TigerApp</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>Tiger</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>TigerApp</AndroidSigningKeyPass>
+    <EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
+    <Debugger>Xamarin</Debugger>
+    <AndroidUseSharedRuntime>true</AndroidUseSharedRuntime>
+    <AndroidSupportedAbis>armeabi-v7a;armeabi;x86_64;arm64-v8a;x86</AndroidSupportedAbis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>TRACE;__ANDROID__;_CURRENT_ACTIVITY_;_TDES_AUTH_TOKEN_;_ENCRYPTION_;_NETWORK_;_PERMISSIONS_;_DL_CACHE_;_PHONE_CALL_;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ModernHttpClient">
+      <HintPath>..\Components\modernhttpclient-2.4.2\lib\android\ModernHttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="OkHttp">
+      <HintPath>..\Components\modernhttpclient-2.4.2\lib\android\OkHttp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="CalligraphyBindings">
+      <HintPath>..\Components\calligraphyxamarin-2.1\lib\android\CalligraphyBindings.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="HockeySDK.AndroidBindings">
+      <HintPath>..\packages\HockeySDK.Xamarin.4.1.0\lib\MonoAndroid403\HockeySDK.AndroidBindings.dll</HintPath>
+    </Reference>
+    <Reference Include="HockeySDK">
+      <HintPath>..\packages\HockeySDK.Xamarin.4.1.0\lib\MonoAndroid403\HockeySDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="crypto">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.1.1\lib\netstandard1.3\crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\packages\Rx-Core.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\packages\Rx-Linq.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat">
+      <HintPath>..\packages\Splat.1.6.2\lib\monoandroid\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Ads">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Ads.29.0.0.2\lib\MonoAndroid41\Xamarin.GooglePlayServices.Ads.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Base">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Base.29.0.0.2\lib\MonoAndroid41\Xamarin.GooglePlayServices.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Basement">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Basement.29.0.0.2\lib\MonoAndroid41\Xamarin.GooglePlayServices.Basement.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Gcm">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Gcm.29.0.0.2\lib\MonoAndroid41\Xamarin.GooglePlayServices.Gcm.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Location">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Location.29.0.0.2\lib\MonoAndroid41\Xamarin.GooglePlayServices.Location.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Maps">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Maps.29.0.0.2\lib\MonoAndroid41\Xamarin.GooglePlayServices.Maps.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Measurement">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Measurement.29.0.0.2\lib\MonoAndroid41\Xamarin.GooglePlayServices.Measurement.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Json" />
+    <Reference Include="Xamarin.Auth">
+      <HintPath>..\packages\Xamarin.Auth.1.3.1.1\lib\MonoAndroid10\Xamarin.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Glide">
+      <HintPath>..\packages\Glide.Xamarin.3.7.0\lib\Glide.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core">
+      <HintPath>..\packages\Google.Apis.Core.1.19.0\lib\netstandard1.3\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth">
+      <HintPath>..\packages\Google.Apis.Auth.1.19.0\lib\netstandard1.3\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices">
+      <HintPath>..\packages\Google.Apis.Auth.1.19.0\lib\netstandard1.3\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Bolts.AppLinks">
+      <HintPath>..\packages\Bolts.1.4.0\lib\MonoAndroid403\Bolts.AppLinks.dll</HintPath>
+    </Reference>
+    <Reference Include="Bolts.Tasks">
+      <HintPath>..\packages\Bolts.1.4.0\lib\MonoAndroid403\Bolts.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\packages\Rx-PlatformServices.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="ReactiveUI">
+      <HintPath>..\packages\reactiveui-core.6.5.0\lib\MonoAndroid\ReactiveUI.dll</HintPath>
+    </Reference>
+    <Reference Include="ReactiveUI.Fody.Helpers">
+      <HintPath>..\packages\ReactiveUI.Fody.1.1.52\lib\MonoAndroid\ReactiveUI.Fody.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>..\packages\System.Collections.Immutable.1.2.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis">
+      <HintPath>..\packages\Google.Apis.1.16.0\lib\netstandard1.3\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Vision.v1">
+      <HintPath>..\packages\Google.Apis.Vision.v1.1.16.0.599\lib\netstandard1.3\Google.Apis.Vision.v1.dll</HintPath>
+    </Reference>
+    <Reference Include="Validation">
+      <HintPath>..\packages\Validation.2.0.4.14103\lib\portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch\Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLCrypto.Abstractions">
+      <HintPath>..\packages\PCLCrypto.0.5.0.14108\lib\monoandroid\PCLCrypto.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLCrypto">
+      <HintPath>..\packages\PCLCrypto.0.5.0.14108\lib\monoandroid\PCLCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.CardView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.CardView.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v7.CardView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Vector.Drawable">
+      <HintPath>..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.Vector.Drawable.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Animated.Vector.Drawable">
+      <HintPath>..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.Animated.Vector.Drawable.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+    </Reference>
+    <Reference Include="ReactiveUI.AndroidSupport">
+      <HintPath>..\packages\reactiveui-androidsupport.6.5.0\lib\Monoandroid\ReactiveUI.AndroidSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Facebook">
+      <HintPath>..\packages\Xamarin.Facebook.Android.4.13.2\lib\MonoAndroid403\Xamarin.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Facebook.AudienceNetwork">
+      <HintPath>..\packages\Xamarin.Facebook.AudienceNetwork.Android.4.13.0\lib\MonoAndroid41\Xamarin.Facebook.AudienceNetwork.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile.Core">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.1.12\lib\MonoAndroid403\ZXing.Net.Mobile.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.portable">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.1.12\lib\MonoAndroid403\zxing.portable.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXingNetMobile">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.1.12\lib\MonoAndroid403\ZXingNetMobile.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pages\CheckInMissionActivity.cs" />
+    <Compile Include="Pages\CheckInMissionTooFarActivity.cs" />
+    <Compile Include="Pages\EditProfileActivity.cs" />
+    <Compile Include="Pages\EditProfileDialogFragment.cs" />
+    <Compile Include="Pages\EditProfileMissionActivity.cs" />
+    <Compile Include="Pages\EnableGeolocationActivity.cs" />
+    <Compile Include="Pages\ScanReceiptActivity.cs" />
+    <Compile Include="Pages\PrivacyActivity.cs" />
+    <Compile Include="Pages\LogoutPopupDialogFragment.cs" />
+    <Compile Include="Pages\NicknameEnrollmentActivity.cs" />
+    <Compile Include="Pages\ExpHomeActivity.cs" />
+    <Compile Include="Pages\ProfileActivity.cs" />
+    <Compile Include="Pages\ScanMissionActivity.cs" />
+    <Compile Include="Pages\SettingsActivity.cs" />
+    <Compile Include="Pages\SettingsFeedbackActivity.cs" />
+    <Compile Include="Pages\ShareMissionActivity.cs" />
+    <Compile Include="Pages\SplashPage.cs" />
+    <Compile Include="Pages\SurveyMissionActivity.cs" />
+    <Compile Include="Pages\WallOfAvatarActivity.cs" />
+    <Compile Include="Pages\StoreLocatorActivity.cs" />
+    <Compile Include="Pages\SMSEnrollmentActivity.cs" />
+    <Compile Include="Pages\StoresListActivity.cs" />
+    <Compile Include="Pages\ProductsCatalogueActivity.cs" />
+    <Compile Include="Pages\MainActivity.cs" />
+    <Compile Include="Pages\UnsupportedRegionActivity.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BaseReactiveActivity.cs" />
+    <Compile Include="Services\Platform\DeviceOrientationService.cs" />
+    <Compile Include="Services\Platform\FacebookAuthService.cs" />
+    <Compile Include="Application.cs" />
+    <Compile Include="Services\Platform\Sms\SmsCodeReceiver.cs" />
+    <Compile Include="Tutorial\ImageTutorialController.cs" />
+    <Compile Include="Tutorial\ImageTutorialModel.cs" />
+    <Compile Include="Tutorial\SlidingTutorial\TutorialPageFragment.cs" />
+    <Compile Include="Tutorial\SlidingTutorial\TutorialFragmentAdapter.cs" />
+    <Compile Include="UI\ListPickerFragment.cs" />
+    <Compile Include="UI\ViewPageIndicator\CirclePageIndicator.cs" />
+    <Compile Include="UI\ViewPageIndicator\IPageIndicator.cs" />
+    <Compile Include="Tutorial\TooltipTutorialController.cs" />
+    <Compile Include="UI\DeviceCamera\AutoFitSurfaceView.cs" />
+    <Compile Include="UI\DeviceCamera\AutoFitTextureView.cs" />
+    <Compile Include="UI\DeviceCamera\Camera2Device.cs" />
+    <Compile Include="UI\DeviceCamera\CameraDeviceDeprecated.cs" />
+    <Compile Include="UI\DeviceCamera\ICameraDevice.cs" />
+    <Compile Include="UI\DeviceCamera\ICameraPreviewViewCallback.cs" />
+    <Compile Include="UI\DeviceCamera\ICameraPreview.cs" />
+    <Compile Include="UI\DeviceCamera\CameraUtil.cs" />
+    <Compile Include="UI\ExpProgressBar.cs" />
+    <Compile Include="UI\OnSwipeGestureListener.cs" />
+    <Compile Include="UI\ProductCard.cs" />
+    <Compile Include="UI\ProductCardsAdapter.cs" />
+    <Compile Include="UI\SnappingLinearLayoutManager.cs" />
+    <Compile Include="UI\Stores\StoreChildViewHolder.cs" />
+    <Compile Include="UI\Stores\StoreListChildItemModel.cs" />
+    <Compile Include="UI\Stores\StoreListItemModel.cs" />
+    <Compile Include="UI\Stores\StoreParentViewHolder.cs" />
+    <Compile Include="UI\Stores\StoresListAdapter.cs" />
+    <Compile Include="UI\SwipeCards\CardStackAdapter.cs" />
+    <Compile Include="UI\TigerTextView.cs" />
+    <Compile Include="UI\SwipeCards\CardAnimator.cs" />
+    <Compile Include="UI\SwipeCards\CardStack.cs" />
+    <Compile Include="UI\SwipeCards\CardUtils.cs" />
+    <Compile Include="UI\SwipeCards\DefaultStackEventListener.cs" />
+    <Compile Include="UI\SwipeCards\DragGestureDetector.cs" />
+    <Compile Include="UI\SwipeCards\Animation\RelativeLayoutParamsEvaluator.cs" />
+    <Compile Include="UI\ExpandableRecyclerView\Adapters\ExpandableRecyclerAdapter.cs" />
+    <Compile Include="UI\ExpandableRecyclerView\Adapters\ExpandableRecyclerAdapterHelper.cs" />
+    <Compile Include="UI\ExpandableRecyclerView\ClickListeners\IExpandCollapseListener.cs" />
+    <Compile Include="UI\ExpandableRecyclerView\ClickListeners\IParentItemClickListener.cs" />
+    <Compile Include="UI\ExpandableRecyclerView\Models\IParentObject.cs" />
+    <Compile Include="UI\ExpandableRecyclerView\Models\ParentWrapper.cs" />
+    <Compile Include="UI\ExpandableRecyclerView\ViewHolders\ChildViewHolder.cs" />
+    <Compile Include="UI\ExpandableRecyclerView\ViewHolders\ParentViewHolder.cs" />
+    <Compile Include="UI\TintableButton.cs" />
+    <Compile Include="UI\ToolTips\ArrowView.cs" />
+    <Compile Include="UI\ToolTips\TooltipBuilder.cs" />
+    <Compile Include="UI\ToolTips\ContentWrapper.cs" />
+    <Compile Include="Utils\DialogUtil.cs" />
+    <Compile Include="Utils\PlatformUtil.cs" />
+    <Compile Include="Utils\RandomUtil.cs" />
+    <Compile Include="Pages\HomeActivity.cs" />
+    <Compile Include="Pages\CouponPageActivity.cs" />
+    <Compile Include="UI\Coupons\DynamicLayout.cs" />
+    <Compile Include="UI\Coupons\DynamicLayoutAdapter.cs" />
+    <Compile Include="UI\Coupons\CouponNumberModel.cs" />
+    <Compile Include="UI\Coupons\CouponPagerAdapter.cs" />
+    <Compile Include="Utils\ScreenUtils.cs" />
+    <Compile Include="Pages\MissionList\MissionsListActivity.cs" />
+    <Compile Include="Pages\MissionList\MissionsAdapter.cs" />
+    <Compile Include="Pages\EnableNotificationsActivity.cs" />
+    <Compile Include="Services\Platform\FlagStoreService.cs" />
+    <Compile Include="UI\ToolTips\OverlayView.cs" />
+    <Compile Include="UI\ToolTips\SimpleTooltip.cs" />
+    <Compile Include="UI\ToolTips\SimpleTooltipUtils.cs" />
+    <Compile Include="Utils\MathUtil.cs" />
+    <Compile Include="Pages\ChangeNumberInstructionActivity.cs" />
+    <Compile Include="Pages\ChangeNumberActivity.cs" />
+    <Compile Include="Pages\TwoCityMissionActivity.cs" />
+    <Compile Include="Pages\TigerTrotterMissionActivity.cs" />
+    <Compile Include="Services\Platform\Notifications\GSMListenerService.cs" />
+    <Compile Include="Services\Platform\Notifications\NotificationsService.cs" />
+    <Compile Include="Services\Platform\Notifications\NotificationTokenRefreshListenerService.cs" />
+    <Compile Include="Services\Platform\Notifications\RegistrationIntentService.cs" />
+    <Compile Include="Services\Platform\LocationService.cs" />
+    <Compile Include="UI\DatePickerFragment.cs" />
+    <Compile Include="UI\GoogleFormsWebView.cs" />
+    <Compile Include="UI\DeviceCamera\CameraCaptureStateListener.cs" />
+    <Compile Include="Utils\DroidPushNotifcationsSource.cs" />
+    <Compile Include="Configs\DroidApiVersionConfig.cs" />
+    <Compile Include="UI\Coupons\QRCodeView.cs" />
+    <Compile Include="Pages\CouponPopupFragment.cs" />
+    <Compile Include="UI\ToolTips\CardFactory.cs" />
+    <Compile Include="Services\Platform\ProximityService.cs" />
+    <Compile Include="Services\Platform\GoogleApiServerHandler.cs" />
+    <Compile Include="Pages\CheckInSurveyActivity.cs" />
+    <Compile Include="Pages\TwitterTestActivity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FodyWeavers.xml" />
+    <AndroidAsset Include="Assets\fonts\FrutigerMedium.ttf" />
+    <AndroidAsset Include="Assets\fonts\FrutigerRegular.ttf" />
+    <AndroidAsset Include="Assets\fonts\TigerCandyRegular.ttf" />
+    <AndroidAsset Include="Assets\fonts\TigerRegular.ttf" />
+    <AndroidResource Include="Resources\layout\activity_home.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-hdpi\btn_home_location.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\btn_home_new.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\btn_phone.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\btn_sms_login.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tiger_logo.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\btn_home_location.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\btn_home_new.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\btn_phone.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\btn_sms_login.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tiger_logo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\btn_home_location.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\btn_home_new.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\btn_phone.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\btn_sms_login.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tiger_logo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\btn_home_location.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\btn_home_new.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\btn_phone.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\btn_sms_login.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\tiger_logo.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\btn_home_location.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\btn_home_new.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\btn_phone.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\btn_sms_login.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\tiger_logo.png" />
+    <AndroidResource Include="Resources\drawable\img_test_product.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_arrow_right.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_dislike_selected.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_dislike_unselected.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_like_selected.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_like_unselected.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_punto.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_return.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_arrow_right.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_dislike_selected.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_dislike_unselected.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_like_selected.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_like_unselected.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_punto.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_return.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_arrow_right.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_dislike_selected.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_dislike_unselected.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_like_selected.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_like_unselected.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_punto.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_return.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_arrow_right.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_dislike_selected.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_dislike_unselected.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_like_selected.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_like_unselected.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_punto.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_return.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_arrow_right.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_dislike_selected.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_dislike_unselected.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_like_selected.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_like_unselected.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_punto.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_return.png" />
+    <AndroidResource Include="Resources\layout\activity_products_catalogue.axml" />
+    <AndroidResource Include="Resources\layout\product_card.axml" />
+    <AndroidResource Include="Resources\layout\activity_enable_geolocation.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_unsupported_region.axml" />
+    <AndroidResource Include="Resources\layout\activity_stores_list.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\back_gray.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\btn_tiger_back.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_arrow_down.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\btn_tiger_back.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_arrow_down.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\btn_tiger_back.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_arrow_down.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\btn_tiger_back.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_arrow_down.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\btn_tiger_back.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_arrow_down.png" />
+    <AndroidResource Include="Resources\layout\item_store_child.axml" />
+    <AndroidResource Include="Resources\layout\item_store_parent.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_arrow_up.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_arrow_up.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_arrow_up.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_arrow_up.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_arrow_up.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_sms.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_sms.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_sms.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_sms.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_sms.png" />
+    <AndroidResource Include="Resources\layout\activity_sms_enrollment.axml" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\tiger_subtitle.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\tiger_title.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\tiger_subtitle.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\tiger_title.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tiger_subtitle.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tiger_subtitle.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tiger_subtitle.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\btn_gray_back.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_enroll_placeholder.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\btn_gray_back.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_enroll_placeholder.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\btn_gray_back.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_enroll_placeholder.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\btn_gray_back.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_enroll_placeholder.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\btn_gray_back.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_enroll_placeholder.png" />
+    <AndroidResource Include="Resources\layout\activity_nickname_enrollment.axml" />
+    <AndroidResource Include="Resources\layout\alert_default_layout.axml" />
+    <AndroidResource Include="Resources\layout\activity_coupon_page.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\coupon_06.png" />
+    <AndroidResource Include="Resources\drawable\coupon_06a.png" />
+    <AndroidResource Include="Resources\drawable\coupon_06b.png" />
+    <AndroidResource Include="Resources\drawable\coupon_07.png" />
+    <AndroidResource Include="Resources\drawable\coupon_07a.png" />
+    <AndroidResource Include="Resources\drawable\coupon_07b.png" />
+    <AndroidResource Include="Resources\drawable\coupon_08.png" />
+    <AndroidResource Include="Resources\drawable\coupon_08a.png" />
+    <AndroidResource Include="Resources\drawable\coupon_08b.png" />
+    <AndroidResource Include="Resources\drawable\coupon_09.png" />
+    <AndroidResource Include="Resources\drawable\coupon_09a.png" />
+    <AndroidResource Include="Resources\drawable\coupon_09b.png" />
+    <AndroidResource Include="Resources\drawable\coupon_10.png" />
+    <AndroidResource Include="Resources\drawable\coupon_10a.png" />
+    <AndroidResource Include="Resources\drawable\coupon_01.png" />
+    <AndroidResource Include="Resources\drawable\coupon_02.png" />
+    <AndroidResource Include="Resources\drawable\coupon_03.png" />
+    <AndroidResource Include="Resources\drawable\coupon_04.png" />
+    <AndroidResource Include="Resources\drawable\coupon_05_button.png" />
+    <AndroidResource Include="Resources\drawable\coupon_11.png" />
+    <AndroidResource Include="Resources\drawable\coupon_12.png" />
+    <AndroidResource Include="Resources\drawable\coupon_13_button.png" />
+    <AndroidResource Include="Resources\drawable\coupon_14.png" />
+    <AndroidResource Include="Resources\layout\activity_exp_home.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\back_transparent_black.xml" />
+    <AndroidResource Include="Resources\drawable\back_yellow.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_app_usage.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_app_usage_big.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_app_usage_front.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_coupon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_info.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_qr_code.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_user.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tiger_title.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_app_usage.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_app_usage_big.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_app_usage_front.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_coupon.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_info.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_qr_code.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_user.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tiger_title.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_app_usage.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_app_usage_big.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_app_usage_front.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_coupon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_info.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_qr_code.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_user.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tiger_title.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_app_usage.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_app_usage_big.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_app_usage_front.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_coupon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_info.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_qr_code.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_user.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_app_usage.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_app_usage_big.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_app_usage_front.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_coupon.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_info.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_qr_code.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_user.png" />
+    <AndroidResource Include="Resources\drawable\first_access_message.png" />
+    <AndroidResource Include="Resources\layout\item_profile_badge.axml" />
+    <AndroidResource Include="Resources\layout\activity_profile.axml" />
+    <AndroidResource Include="Resources\layout\activity_settings.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\item_settings.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\popup_logout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_privacy.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_check_in_mission.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\shared_mission_action_bar.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_scan_mission.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_share_mission.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_check_in_mission_complete.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_edit_profile_mission.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\dialog_tutorial_layout.axml" />
+    <AndroidResource Include="Resources\layout\activity_store_locator.axml" />
+    <AndroidResource Include="Resources\drawable\btn_locator_background.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_locator.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_store_divider.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_store_location_marker.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_store_location_marker_selected.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_store_location_unselected.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_locator.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_store_divider.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_store_location_marker.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_store_location_marker_selected.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_store_location_unselected.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_locator.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_store_divider.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_store_location_marker.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_store_location_marker_selected.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_store_location_unselected.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_locator.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_store_divider.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_store_location_marker.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_store_location_marker_selected.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_store_location_unselected.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_locator.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_store_divider.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_store_location_marker.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_store_location_marker_selected.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_store_location_unselected.png" />
+    <AndroidResource Include="Resources\layout\item_store_locator_list.axml" />
+    <AndroidResource Include="Resources\layout\locator_input_layout.axml" />
+    <AndroidResource Include="Resources\layout\test_view.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_phone.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_phone.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_phone.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_phone.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_phone.png" />
+    <AndroidResource Include="Resources\drawable\notific_01.png" />
+    <AndroidResource Include="Resources\drawable\notific_02.png" />
+    <AndroidResource Include="Resources\drawable\notific_03_button.png" />
+    <AndroidResource Include="Resources\layout\activity_missions_list.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\item_mission.axml" />
+    <AndroidResource Include="Resources\drawable\mission_01.png" />
+    <AndroidResource Include="Resources\drawable\mission_01b.png" />
+    <AndroidResource Include="Resources\drawable\mission_02.png" />
+    <AndroidResource Include="Resources\drawable\mission_02b.png" />
+    <AndroidResource Include="Resources\drawable\mission_03.png" />
+    <AndroidResource Include="Resources\drawable\mission_03b.png" />
+    <AndroidResource Include="Resources\drawable\mission_04.png" />
+    <AndroidResource Include="Resources\drawable\mission_04b.png" />
+    <AndroidResource Include="Resources\drawable\mission_05.png" />
+    <AndroidResource Include="Resources\drawable\mission_05b.png" />
+    <AndroidResource Include="Resources\drawable\mission_06.png" />
+    <AndroidResource Include="Resources\drawable\mission_06b.png" />
+    <AndroidResource Include="Resources\drawable\mission_07.png" />
+    <AndroidResource Include="Resources\drawable\mission_07b.png" />
+    <AndroidResource Include="Resources\drawable\mission_08.png" />
+    <AndroidResource Include="Resources\drawable\mission_08b.png" />
+    <AndroidResource Include="Resources\drawable\mission_09.png" />
+    <AndroidResource Include="Resources\drawable\mission_09b.png" />
+    <AndroidResource Include="Resources\drawable\mission_10.png" />
+    <AndroidResource Include="Resources\drawable\mission_10b.png" />
+    <AndroidResource Include="Resources\drawable\mission_11.png" />
+    <AndroidResource Include="Resources\drawable\mission_11b.png" />
+    <AndroidResource Include="Resources\drawable\mission_15_button.png" />
+    <AndroidResource Include="Resources\color\mission_list_item_prize_text_color.xml" />
+    <AndroidResource Include="Resources\color\mission_list_item_description_text_color.xml" />
+    <AndroidResource Include="Resources\drawable\mission_list_item_background_color.xml" />
+    <AndroidResource Include="Resources\drawable\mission_12.png" />
+    <AndroidResource Include="Resources\drawable\mission_list_item_right_icon.xml" />
+    <AndroidResource Include="Resources\values-hdpi\dimens.xml" />
+    <AndroidResource Include="Resources\values-xxhdpi\dimens.xml" />
+    <AndroidResource Include="Resources\layout\activity_enable_notifycations.axml" />
+    <AndroidResource Include="Resources\values-h500dp\dimens.xml" />
+    <AndroidResource Include="Resources\values-h560dp\dimens.xml" />
+    <AndroidResource Include="Resources\values-h700dp\dimens.xml" />
+    <AndroidResource Include="Resources\values-xhdpi\dimens.xml" />
+    <AndroidResource Include="Resources\layout\activity_edit_profile.axml" />
+    <AndroidResource Include="Resources\layout\popup_edit_profile.axml" />
+    <AndroidResource Include="Resources\layout\popup_product_catalogue.axml" />
+    <AndroidResource Include="Resources\drawable\back_tooltip_popup.9.png" />
+    <AndroidResource Include="Resources\values\tooltip_style.xml" />
+    <AndroidResource Include="Resources\layout\back_default_tooltip.axml" />
+    <AndroidResource Include="Resources\values\tutorial_strings.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_coupon_tips.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_coupon_tips.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_coupon_tips.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_coupon_tips.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_coupon_tips.png" />
+    <AndroidResource Include="Resources\layout\tips_coupon_s2.axml" />
+    <AndroidResource Include="Resources\drawable\popup_tutorial_b_coupon.png" />
+    <AndroidResource Include="Resources\drawable\popup_tutorial_coupon.png" />
+    <AndroidResource Include="Resources\drawable\cambia_num_img.png" />
+    <AndroidResource Include="Resources\drawable\checked_icon.png" />
+    <AndroidResource Include="Resources\drawable\divisor_line.png" />
+    <AndroidResource Include="Resources\layout\layout_change_number_actionbar.axml" />
+    <AndroidResource Include="Resources\layout\activity_change_number.axml" />
+    <AndroidResource Include="Resources\layout\activity_change_number_instruction.axml" />
+    <AndroidResource Include="Resources\drawable\avatar_placeholder.9.png" />
+    <AndroidResource Include="Resources\drawable\ic_avatar_sample_1.png" />
+    <AndroidResource Include="Resources\drawable\ic_avatar_sample_2.png" />
+    <AndroidResource Include="Resources\layout\activity_avatar_wall.axml" />
+    <AndroidResource Include="Resources\layout\item_avatar.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\btn_default_white.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\btn_default_white.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\btn_default_white.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\btn_default_white.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\btn_default_white.png" />
+    <AndroidResource Include="Resources\drawable\btn_sms.xml" />
+    <AndroidResource Include="Resources\layout\activity_scan_receipt.axml" />
+    <AndroidResource Include="Resources\layout\activity_two_cities_mission.axml" />
+    <AndroidResource Include="Resources\drawable\missione_tiger_checkin_2citta_icon_off.png" />
+    <AndroidResource Include="Resources\drawable\missione_tiger_checkin_2citta_icon_on.png" />
+    <AndroidResource Include="Resources\drawable\missione_tiger_checkin_2citta_img.png" />
+    <AndroidResource Include="Resources\drawable\missione_tiger_checkin_2citta_punti.png" />
+    <AndroidResource Include="Resources\layout\dialog_progress.axml" />
+    <AndroidResource Include="Resources\layout\activity_tiger_trotter_mission.axml" />
+    <AndroidResource Include="Resources\drawable\missione_tiger_trotter_img3.png" />
+    <AndroidResource Include="Resources\drawable\missione_tiger_trotter_punti.png" />
+    <AndroidResource Include="Resources\drawable\missione_tiger_trottere_img4.png" />
+    <AndroidResource Include="Resources\layout\layout_trotter_mission_city_list_item.axml" />
+    <AndroidResource Include="Resources\layout\layout_trotter_mission_city_list_item_empty.axml" />
+    <AndroidResource Include="Resources\drawable\ic_three_dots.png" />
+    <AndroidResource Include="Resources\drawable\dashed_line.xml" />
+    <AndroidResource Include="Resources\drawable\tiger_trotter_img.png" />
+    <None Include="google-services.json" />
+    <AndroidResource Include="Resources\drawable\img_euro_punti.png" />
+    <AndroidResource Include="Resources\drawable\scan_mission_back.png" />
+    <AndroidResource Include="Resources\drawable\scan_mission_front.png" />
+    <AndroidResource Include="Resources\layout\dialog_scan_receipt.axml" />
+    <AndroidResource Include="Resources\layout\confirmation_default_layout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-ldpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable\badge_blank.png" />
+    <AndroidResource Include="Resources\drawable\profile_picture_backgd.png" />
+    <AndroidResource Include="Resources\drawable\element3.png" />
+    <AndroidResource Include="Resources\drawable\elements1.png" />
+    <AndroidResource Include="Resources\drawable\elements2.png" />
+    <AndroidResource Include="Resources\drawable\img_big_arrow_to_right.png" />
+    <AndroidResource Include="Resources\drawable\img_page_all_products_voted.png" />
+    <AndroidResource Include="Resources\drawable\mission_survey_image.png" />
+    <AndroidResource Include="Resources\layout\activity_survey_mission.axml" />
+    <AndroidResource Include="Resources\values-h500dp\styles.xml" />
+    <AndroidResource Include="Resources\values-h560dp\styles.xml" />
+    <AndroidResource Include="Resources\values-h700dp\styles.xml" />
+    <AndroidResource Include="Resources\layout\dialog_badge_card.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\coloredtop.png" />
+    <AndroidResource Include="Resources\drawable\hands.png" />
+    <AndroidResource Include="Resources\layout\popup_qrview_clown.axml" />
+    <AndroidResource Include="Resources\layout\tooltip_coupon.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\tooltip_coupon_special.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\dialog_level_up_card.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_twitter_test.axml" />
+    <AndroidResource Include="Resources\drawable\custom_circled_progressbar.xml" />
+    <AndroidAsset Include="Assets\oauthconfigmodel.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="calligraphyxamarin">
+      <Visible>False</Visible>
+      <Version>2.1</Version>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="modernhttpclient">
+      <Version>2.4.2</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="facebookandroid">
+      <Version>4.13.2.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="googleplayservices-maps">
+      <Version>29.0.0.2</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="zxing.net.mobile">
+      <Version>2.1.12</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="googleplayservices-location">
+      <Version>29.0.0.2</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\back_recycler_limiter.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\attr.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\keys.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\colors.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\dimens.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\styles.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\ids.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_test.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_test_fonts.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\btn_like_selector.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\btn_dislike_selector.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\punto_apearence.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\horizontal_line.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\txt_phone_input_back.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\button_geolocation_background.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\geo_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\geo_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\geo_03_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\geo_03_button_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\btn_default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\geo_09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\geo_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\back_white.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\profile_05_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\profile_01_placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\profile_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\profile_03_placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\profile_04_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\impostazioni_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\impostazioni_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\checkin_05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\checkin_06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\checkin_07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\checkin_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\checkin_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\sharefb_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\sharefb_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\scan_scont_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\edi_profile_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\edi_profile_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\btn_default_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\locator_panel_border.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\edit_text_background.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ciao_mail_conferma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\img_10punti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\img_edit_profile_mission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\img_10punti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\img_edit_profile_mission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\img_10punti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\img_edit_profile_mission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\img_edit_profile_mission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\img_10punti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\img_10punti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\img_edit_profile_mission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\slide_in_left.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\slide_in_right.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\slide_out_left.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\slide_out_right.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\slide_in_down.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\slide_out_down.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\slide_in_up.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\slide_out_up.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\back_splash.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\btn_image_trans_back_selector.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\btn_orange_colors_selector.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\btn_facebook_colors_selector.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\btn_image_white_trans_back_selector.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\btn_image_actionbar_selector.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\img_supported_stores_map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_error_loading_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\btn_image_gray_trans_back_selector.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\vpi__attrs.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\vpi__colors.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\vpi__defaults.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\vpi__styles.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\tutorial_swipe_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\tutorial_swipe_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\tutorial_vote_sharet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\product_catalogue_tutorial_img1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\product_catalogue_tutorial_img2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\product_catalogue_tutorial_img3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_arrow_card_badge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\badgecard_tiger_addicted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\badgecard_tiger_collector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\badgecard_tiger_social.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\badgecard_tiger_evangelist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\badgecard_tiger_local.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\badgecard_tiger_mrtiger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\badgecard_tiger_survey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\badgecard_tiger_tinder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\badgecard_tiger_trotter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\badgecard_tiger_weekly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_x_card_badge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_arrow_card_badge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_x_card_badge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_arrow_card_badge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_x_card_badge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_arrow_card_badge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_x_card_badge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_arrow_card_badge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_x_card_badge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\mechanics_05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\mechanics_06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\mechanics_07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\mechanics_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\mechanics_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\mechanics_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\mechanics_coupon_special_popup.9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\mechanics_coupon_popup.9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\mechanics_coupon_popup.9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\mechanics_coupon_special_popup.9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\mechanics_coupon_popup.9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\mechanics_coupon_special_popup.9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\mechanics_coupon_popup.9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\mechanics_coupon_special_popup.9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\mechanics_coupon_special_popup.9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\mechanics_coupon_popup.9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\img_qrcode_popup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\cambio_livello_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\cambio_livello_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\cambio_livello_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\cambio_livello_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\cambio_livello_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\cambio_livello_2_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\cambio_livello_3_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\cambio_livello_4_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\cambio_livello_5_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\cambio_livello_6_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\cambio_livello_2_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\cambio_livello_3_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\cambio_livello_4_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\cambio_livello_5_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\cambio_livello_6_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\cambio_livello_2_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\cambio_livello_3_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\cambio_livello_4_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\cambio_livello_5_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\cambio_livello_6_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\cambio_livello_2_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\cambio_livello_3_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\cambio_livello_4_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\cambio_livello_5_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\cambio_livello_6_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\cambio_livello_2_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\cambio_livello_3_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\cambio_livello_4_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\cambio_livello_5_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\cambio_livello_6_text.png" />
+  </ItemGroup>
+  <Import Project="..\AD\AD.projitems" Label="Shared" Condition="Exists('..\AD\AD.projitems')" />
+  <Import Project="..\TigerApp.Shared\TigerApp.Shared.projitems" Label="Shared" Condition="Exists('..\TigerApp.Shared\TigerApp.Shared.projitems')" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="..\packages\Fody.1.29.4\build\dotnet\Fody.targets" Condition="Exists('..\packages\Fody.1.29.4\build\dotnet\Fody.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Basement.29.0.0.2\build\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Basement.29.0.0.2\build\Xamarin.GooglePlayServices.Basement.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets')" />
+</Project>

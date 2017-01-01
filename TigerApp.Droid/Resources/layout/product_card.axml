@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tigerapp.droid.ui.ProductCard xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back_product_card"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="5dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/back_product_card"
+        android:weightSum="100"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/imgTigerLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:paddingTop="15dp"
+            android:layout_weight="20"
+            android:src="@drawable/tiger_logo" />
+        <ad.views.android.ADImageView
+            android:id="@+id/imgProduct"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="50"
+            android:scaleType="fitCenter" />
+        <tigerapp.droid.ui.TigerTextView
+            android:id="@+id/txtProductName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test product Name"
+            android:gravity="center"
+            style="@style/ProductName" />
+        <tigerapp.droid.ui.TigerTextView
+            android:id="@+id/txtProductPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="123,0 $"
+            style="@style/ProductPrice" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="30">
+            <ImageButton
+                android:id="@+id/btnDislike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/btn_dislike_selector"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/btnShare"
+                android:layout_toStartOf="@+id/btnShare" />
+            <ImageView
+                android:id="@+id/btnDislikeOver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/ic_dislike_selected"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/btnShare"
+                android:layout_toStartOf="@+id/btnShare" />
+            <ImageButton
+                android:id="@+id/btnLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/btn_like_selector"
+                android:layout_alignBottom="@+id/btnDislike"
+                android:layout_toRightOf="@+id/btnShare"
+                android:layout_toEndOf="@+id/btnShare" />
+            <ImageView
+                android:id="@+id/btnLikeOver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/ic_like_selected"
+                android:layout_alignBottom="@+id/btnDislike"
+                android:layout_toRightOf="@+id/btnShare"
+                android:layout_toEndOf="@+id/btnShare" />
+            <ImageButton
+                android:id="@+id/btnShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/btn_image_gray_trans_back_selector"
+                android:src="@drawable/ic_return" />
+            <tigerapp.droid.ui.TigerTextView
+                android:id="@+id/txtNavigate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:paddingBottom="5dp"
+                android:text="Posta il tuo preferito!"
+                android:gravity="center"
+                style="@style/ProductName" />
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_arrow_right"
+                android:padding="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/btn_image_gray_trans_back_selector"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+    </LinearLayout>
+<!-- <ImageView
+        android:id="@+id/imgPunto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_punto"
+        />-->
+    <ImageView
+        android:id="@+id/imgPunto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:src="@drawable/ic_punto" />
+</tigerapp.droid.ui.ProductCard>

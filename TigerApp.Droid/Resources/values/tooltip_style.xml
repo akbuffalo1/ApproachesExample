@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="DefaultTooltipText">
+		<item name="android:textSize">@dimen/tooltip_text_size</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="font">fonts/TigerRegular.ttf</item>
+	</style>
+	<style name="simpletooltip_default">
+		<item name="android:textSize">@dimen/stores_list_child_item_info</item>
+		<item name="android:textColor">@color/txt_black</item>
+		<item name="font">fonts/TigerRegular.ttf</item>
+	</style>
+	
+	<dimen name="simpletooltip_overlay_circle_offset">1dp</dimen>
+	<dimen name="simpletooltip_margin">10dp</dimen>
+	<dimen name="simpletooltip_padding">0dp</dimen>
+	<dimen name="simpletooltip_animation_padding">4dp</dimen>
+	<dimen name="tooltip_text_size">15pt</dimen>
+	<dimen name="simpletooltip_side_margin">5dp</dimen>
+
+	<color name="simpletooltip_background">@color/white</color>
+	<color name="simpletooltip_text">@color/txt_black</color>
+	<color name="simpletooltip_arrow">#ff00ff</color>
+	
+	<integer name="simpletooltip_overlay_alpha">120</integer>
+	<integer name="simpletooltip_animation_duration">800</integer>
+</resources>

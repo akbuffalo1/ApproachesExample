@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    style="@style/MissionListItemViewHolder"
+    android:clickable="true"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/missionsListItemHolder"
+        android:orientation="vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp">
+        <ad.views.android.ADImageView
+            android:id="@+id/missionsListItemLeftIcon"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="@dimen/mission_list_item_left_icon_height"
+            android:layout_height="@dimen/mission_list_item_left_icon_height"
+            android:layout_weight="0.3" />
+        <tigerapp.droid.ui.TigerTextView
+            android:id="@+id/missionsListItemPrizeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/MissionListItemPrizeText"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.7" />
+    </LinearLayout>
+    <tigerapp.droid.ui.TigerTextView
+        android:id="@+id/missionsListItemDescriptionText"
+        style="@style/MissionListItemDescriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/missionsListItemHolder"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_toLeftOf="@+id/missionsListItemRightIcon" />
+    <ImageView
+        android:id="@+id/missionsListItemRightIcon"
+        android:layout_width="@dimen/mission_list_item_right_icon_height"
+        android:layout_height="@dimen/mission_list_item_right_icon_height"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/mission_list_item_right_icon"
+        android:layout_marginRight="8dp" />
+</RelativeLayout>

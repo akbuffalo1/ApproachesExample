@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/surveyMissionContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fadingEdge="none"
+    android:background="#FFFFFF"
+    android:fillViewport="true">
+    <RelativeLayout
+        android:id="@+id/layoutActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbar_size"
+        android:background="@drawable/back_gray">
+        <ImageButton
+            android:id="@+id/btnActionBarBack"
+            android:layout_width="@dimen/actionbar_size"
+            android:layout_height="@dimen/actionbar_size"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/btn_image_actionbar_selector"
+            android:scaleType="center"
+            android:src="@drawable/btn_tiger_back" />
+        <tigerapp.droid.ui.TigerTextView
+            android:id="@+id/txtCaption"
+            style="@style/StoresListCaption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/page_survey_mission_title" />
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/imgScanMission"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/scan_mission_image_size"
+        android:layout_below="@id/layoutActionBar"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="15dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/mission_survey_image" />
+    <ImageView
+        android:id="@+id/puntiBack"
+        android:layout_width="128dp"
+        android:layout_height="146dp"
+        android:layout_alignBottom="@id/imgScanMission"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/img_euro_punti" />
+    <tigerapp.droid.ui.TigerTextView
+        android:id="@+id/txtPuntiCount"
+        style="@style/PageDefaultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/puntiBack"
+        android:layout_marginRight="66dp"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:rotation="-20"
+        android:text="10"
+        android:textColor="@android:color/black"
+        android:textSize="17pt" />
+    <tigerapp.droid.ui.TigerTextView
+        android:id="@+id/txtScanMissionMessage"
+        style="@style/PageMissionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnMissionCompleteCommand"
+        android:layout_below="@id/imgScanMission"
+        android:gravity="center"
+        android:text="@string/page_survey_mission_message"
+        android:textColor="@android:color/black" />
+    <tigerapp.droid.ui.TintableButton
+        android:id="@+id/btnMissionCompleteCommand"
+        style="@style/ButtonsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/btn_sms"
+        android:text="@string/btn_complete_mission"
+        app:tint="@drawable/btn_orange_colors_selector" />
+</RelativeLayout>

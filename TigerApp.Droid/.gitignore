@@ -1,0 +1,7 @@
+#build
+[Oo]bj/
+[Bb]in/
+packages/
+TestResults/
+Resources/Resource.designer.cs
+TigerApp.Droid.csproj.user

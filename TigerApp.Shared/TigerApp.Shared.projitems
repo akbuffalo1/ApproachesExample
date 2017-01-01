@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{7821B69E-2AD2-4280-9A8E-2D7BD9AC5106}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>TigerApp.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Avatar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Products\Product.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Products\ProductVote.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Requests\ProductVoteRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\UserState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\ICouponApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\IMissionApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\IProductApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\IStateApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\IStoreApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CheckInMissionTooFarViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CheckInMissionViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EditProfileMissionViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EnableNotificationsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EnableGeolocationViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configs\IFacebookAuthConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AppSetup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\WallOfAvatarViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ScanReceiptViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PrivacyViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\IViewModelBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configs\HttpServerConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configs\TDesAuthServerConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configs\TDesAuthConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Configs\EncryptionConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Requests\FacebookLoginRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Requests\SmsLoginRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Responses\FacebookLoginResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Responses\SmsLoginResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Responses\FacebookAuthResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\ObservableEx.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\IAuthApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\IBaseApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Platform\IFacebookAuthService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Platform\INotificationsService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\TypeEx.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ProductsCatalogueViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ExpHomeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ReactiveViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ScanMissionViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SettingsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ShareMissionViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SmsEnrollmentViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\StoresViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TestPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UnsupportedRegionViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NicknameEnrollmentViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AcceptEnrollmentConditionsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Badge.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ProfileViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Store.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Coupon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\StoreLocatorViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EditProfileViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Mission.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CouponPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Coupon\CouponNumbersManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Coupon\FibonacciNumberCalculator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Coupon\INumberCalculator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MissionListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Platform\IFlagStoreService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Responses\BaseLoginResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ChangeNumberInstructionViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ChangeNumberViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\API\ApiResourcePathAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\API\ApiServiceProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Platform\RegisterForPushNotificationsEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Platform\RegisterForPushNotificationResponseEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TwoCitiesCheckInViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TigerTrotterMissionViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ServerAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\INotificationsApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\UserProfile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\IProfileApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Platform\ILocationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\GoogleApiCloudVisionService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ScanReceiptResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoadingViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\ITrackedActionsApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TrackedActions\TrackedAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TrackedActions\ShareFBTrackedAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TrackedActions\StoreCheckinTrackedAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TrackedActions\InviteFriendsTrackedAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\IScanReceiptApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Requests\UserProfileDataUpdateRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SurveyMissionViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TrackedActions\CompleteSurveyTrackedAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\BaseApiVersionConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PushNotifications\GCMPushNotification.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PushNotifications\PointsAddedPushNotifications.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PushNotifications\LevelUpPushNotification.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PushNotifications\TigerPushNotification.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PushNotifications\IPushNotificationSource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PushNotifications\PushNotificationsFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PushNotifications\BadgePushNotification.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\IBadgesApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PushNotifications\DiscountCouponPushNotification.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PushNotifications\CouponPushNotification.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PushNotifications\SpecialCouponPushNotification.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Proximity\ProximityEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\IStoreCheckinApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\StoreCheckIn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Platform\IGeofenceService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TrackedActions\Place.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\IProximityApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\IAvatarsApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Survey.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\ISurveyApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\CheckinMissionStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\ICheckInMissionApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PushNotifications\CheckInSurveyPushNotification.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TwitterTestViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\TwitterApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TrackedActions\FailScanReceiptTrackedAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\API\AccountSenderService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HomeViewModel.cs" />
+    <Folder Include="$(MSBuildThisFileDirectory)Utils\Coupon\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Utils\API\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\TrackedActions\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\PushNotifications\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\Proximity\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Utils\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\Platform\" />
+  </ItemGroup>
+</Project>

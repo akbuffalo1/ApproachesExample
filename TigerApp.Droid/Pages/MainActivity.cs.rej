@@ -1,0 +1,9 @@
+diff a/Pages/MainActivity.cs b/Pages/MainActivity.cs	(rejected hunks)
+@@ -61,6 +61,7 @@
+              btn = FindViewById<Button>(Resource.Id.btnSettingsPage);
+              btn.Click += (sender, args) => { StartActivity(typeof(SettingsActivity)); };
+  
+++<<<<<<< HEAD
+ +            btn = FindViewById<Button>(Resource.Id.btnCheckInMissionPage);
+ +            btn.Click += (sender, args) => { StartActivity(typeof(CheckInMissionActivity)); };
+ +

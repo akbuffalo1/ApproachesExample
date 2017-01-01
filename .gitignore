@@ -1,9 +1,9 @@
 #Autosave files
 *~
 Components/
-TigerApp.Droid/
-TigerApp.iOS/
-TigerApp.Shared/
+#TigerApp.Droid/
+#TigerApp.iOS/
+#TigerApp.Shared/
 #build
 [Oo]bj/
 [Bb]in/

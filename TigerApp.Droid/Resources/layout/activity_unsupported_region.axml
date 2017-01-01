@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+  <LinearLayout
+   android:layout_width="match_parent"
+   android:layout_height="100dp"
+   android:background="#F3F3F2">
+  </LinearLayout>
+
+  <ImageView 
+   android:src="@drawable/geo_09"
+   android:layout_width="200dp"
+   android:layout_height="200dp"/>
+
+
+  <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_above="@+id/mainText"
+       android:orientation="vertical">
+    <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:gravity="center"
+       android:text="Ci spiace,"
+       style="@style/PageDefaultText"
+       android:textColor="#000000"
+       android:textSize="16pt"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        style="@style/PageDefaultText"
+ 
+        android:textColor="#000000"
+        android:text="il programma Tiger Italia"
+        android:textSize="12pt"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        style="@style/PageDefaultText"
+        
+        android:textColor="#000000"
+        android:text="Loyalty non è ancora"
+        android:textSize="12pt"/>
+  </LinearLayout>
+
+    <TextView
+        android:id="@+id/mainText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        style="@style/PageDefaultText"
+        android:layout_centerInParent="true"
+        android:textColor="#000000"
+        android:text="disponibile nella tua zona"
+        android:textSize="12pt"/>
+ 
+  
+  <LinearLayout
+ android:layout_width="match_parent"
+ android:layout_height="150dp"
+ android:background="#F3F3F2"
+ android:layout_alignParentBottom="true">
+  </LinearLayout>
+  
+  <ImageView
+ android:src="@drawable/geo_10"
+ android:layout_width="128dp"
+ android:layout_height="128dp"
+ android:layout_below="@id/mainText"
+ android:layout_alignParentRight="true"
+ android:layout_alignParentBottom="true"
+ android:layout_marginBottom="30dp"
+ android:layout_marginRight="15dp"
+ />
+
+</RelativeLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center">
+	<ProgressBar
+		android:id="@+id/pbProgress"
+        style="@android:style/Widget.ProgressBar.Small"
+		android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:layout_centerHorizontal="true"
+		android:layout_centerVertical="true"
+		android:visibility="gone"
+        android:layout_marginRight="5dp" />
+    <ImageView
+        android:id="@+id/imgTigerLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:paddingTop="15dp"
+        android:src="@drawable/tiger_title" />
+    <ImageView
+        android:id="@+id/imgTigerLogoSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgTigerLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:src="@drawable/tiger_subtitle" />
+    <tigerapp.droid.ui.TigerTextView
+        android:id="@+id/txtMainMsg"
+        style="@style/PageDefaultText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgTigerLogo"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/msg_avar_wall" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/avatarList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btnConfirm"
+        android:layout_below="@id/txtMainMsg"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        tools:listitem="@layout/item_avatar" />
+    <tigerapp.droid.ui.TintableButton
+        android:id="@+id/btnConfirm"
+        style="@style/ButtonsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/msg_confirm"
+        android:background="@drawable/btn_default_white"
+        app:tint="@drawable/btn_orange_colors_selector" />
+</RelativeLayout>

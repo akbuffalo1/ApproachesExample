@@ -1,0 +1,56 @@
+{
+	"author" : "Andrey Korneychuk",
+	"application_name" : "Open Commerce API Core",
+	"creation_date" : "11.11.2016",
+	"oauth_versions" : 
+	{
+		"oauth1" : {
+			"providers" :
+			[
+				{
+					"name" : "twitter",
+					"configs" : 
+                    {
+                    	"auth" : 
+                        {
+							"consumerKey" : 	"jxBwBIHIPNa1giXu2kkptEyPA",
+							"consumerSecret": 	"hygfuUQzAUefB8vzxgkG8HrfRilmEN3NouQ7GbqVBJx3KWWSxL",
+							"requestTokenUrl": 	"https://api.twitter.com/oauth/request_token",
+							"authorizeUrl" : 	"https://api.twitter.com/oauth/authorize",
+							"accessTokenUrl" : 	"https://api.twitter.com/oauth/access_token",
+							"callbackUrl" : 	"http://www.website.com"
+						}, 
+                        "request" :
+                        {
+                        	"verify_credentials_url" : "https://api.twitter.com/1.1/account/verify_credentials.json"
+                        }
+                    } 
+					
+				},
+                {
+					"name" : "facebook",
+					"configs" : 
+                    {
+                    	"auth" : 
+                        {
+							"consumerKey" : 	"jxBwBIHIPNa1giXu2kkptEyPA",
+							"consumerSecret": 	"hygfuUQzAUefB8vzxgkG8HrfRilmEN3NouQ7GbqVBJx3KWWSxL",
+							"requestTokenUrl": 	"https://api.twitter.com/oauth/request_token",
+							"authorizeUrl" : 	"https://api.twitter.com/oauth/authorize",
+							"accessTokenUrl" : 	"https://api.twitter.com/oauth/access_token",
+							"callbackUrl" : 	"http://www.website.com"
+						}, 
+                        "request" :
+                        {
+                        	"verify_credentials_url" : "https://api.twitter.com/1.1/account/verify_credentials.json"
+                        }
+                    } 
+					
+				}
+			]
+		},
+		"oauth2" : {
+			
+		}
+	}
+}

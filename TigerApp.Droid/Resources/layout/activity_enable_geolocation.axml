@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <tigerapp.droid.ui.TigerTextView
+        android:id="@+id/txtPageMessage"
+        style="@style/PageDefaultText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#75DAD0"
+        android:gravity="center"
+        android:lineSpacingExtra="-10dp"
+        android:paddingTop="25dp"
+        android:text="@string/page_enable_geolocation_main_msg"
+        android:textColor="#000000"
+        android:textSize="15pt"/>
+
+    <ImageButton
+        android:id="@+id/btnStores"
+        android:layout_width="160dp"
+        android:layout_height="128dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/txtPageMessage"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_geolocation_background"
+        android:scaleType="fitCenter"/>
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/btnStores"
+        android:layout_marginRight="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/geo_02"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/txtAuthorizeMessage"
+        android:layout_below="@id/txtPageMessage"
+        android:orientation="horizontal"
+        android:paddingBottom="50dp"
+        android:weightSum="100">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="35"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_supported_stores_map"
+            />
+
+        <android.support.v4.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="65"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:layout_above="@id/txtAuthorizeMessage"
+        android:layout_marginLeft="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/geo_01"/>
+
+    <tigerapp.droid.ui.TigerTextView
+        android:id="@+id/txtAuthorizeMessage"
+        style="@style/PageButtonHintText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnAuthorize"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/page_enable_geolocation_authorize_msg"
+        android:textColor="#000000"
+        android:textSize="9pt"/>
+
+    <tigerapp.droid.ui.TintableButton
+        android:id="@+id/btnAuthorize"
+        style="@style/ButtonsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_sms"
+        android:text="@string/page_enable_geolocation_btn_authorize_msg"
+        android:textColor="#FFFFFF"
+        android:textSize="15pt"
+        app:tint="@drawable/btn_orange_colors_selector"/>
+
+    <tigerapp.droid.ui.TigerTextView
+        android:id="@+id/unsupportedRegionText"
+        style="@style/PageButtonHintText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/page_enable_geolocation_unsupported_region_msg"
+        android:textColor="#000000"
+        android:textSize="9pt"/>
+
+</RelativeLayout>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="FrutigerRegular.otf">
+            <string>FrutigerNextLTW1G-RegularCn</string>
+            <string>FrutigerNextLTW1G-RegularCn</string>
+        </mutableArray>
+        <mutableArray key="TigerBasic.otf">
+            <string>tiger-basic-Regular</string>
+            <string>tiger-basic-Regular</string>
+            <string>tiger-basic-Regular</string>
+            <string>tiger-basic-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EnableGeolocationViewController">
+            <connections>
+                <outlet property="authorizeRegionButton" destination="A8f-v2-Pmv" id="soX-9s-Q7H"/>
+                <outlet property="mapImageView" destination="jhX-0A-B6c" id="0qc-0I-Ftm"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCo-Bo-SzF">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacing="-8" translatesAutoresizingMaskIntoConstraints="NO" id="mxv-hV-26F">
+                            <rect key="frame" x="-58" y="28" width="256" height="92"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Il Programa Tiger Italia" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cO-LG-Gcn">
+                                    <rect key="frame" x="20" y="0.0" width="216" height="36"/>
+                                    <fontDescription key="fontDescription" name="tiger-basic-Regular" family="tiger-basic" pointSize="30"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loyalty è attualmente attivo" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbx-9j-6ls">
+                                    <rect key="frame" x="0.0" y="28" width="256" height="36"/>
+                                    <fontDescription key="fontDescription" name="tiger-basic-Regular" family="tiger-basic" pointSize="30"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="nelle seguenti regioni:" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ih-WR-gw7">
+                                    <rect key="frame" x="30" y="56" width="196" height="36"/>
+                                    <fontDescription key="fontDescription" name="tiger-basic-Regular" family="tiger-basic" pointSize="30"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.45882352939999999" green="0.85490196080000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="mxv-hV-26F" firstAttribute="centerX" secondItem="dCo-Bo-SzF" secondAttribute="centerX" id="Bku-0n-JNQ"/>
+                        <constraint firstAttribute="height" constant="120" id="LTQ-k8-reZ"/>
+                        <constraint firstAttribute="bottom" secondItem="mxv-hV-26F" secondAttribute="bottom" id="XX3-q6-oee"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autorizza la gelocalizzazione per scoprire se puoi accedere al servizio!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Za9-o8-Iht">
+                    <rect key="frame" x="4" y="432" width="312" height="36"/>
+                    <fontDescription key="fontDescription" name="FrutigerNextLTW1G-RegularCn" family="Frutiger Next LT W1G" pointSize="18"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8f-v2-Pmv">
+                    <rect key="frame" x="4" y="476" width="312" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="tIw-yS-VnS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="tiger-basic-Regular" family="tiger-basic" pointSize="30"/>
+                    <state key="normal" title="Autorizza e verifica" backgroundImage="ButtonBackground"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lS-v8-wLf">
+                    <rect key="frame" x="4" y="530" width="312" height="30"/>
+                    <fontDescription key="fontDescription" name="FrutigerNextLTW1G-RegularCn" family="Frutiger Next LT W1G" pointSize="18"/>
+                    <state key="normal" title="Sono di un'altra regione">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="OnInAnotherRegionClicked:" destination="-1" eventType="touchUpInside" id="cJg-vq-Dmk"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="geo01" translatesAutoresizingMaskIntoConstraints="NO" id="qvj-Ki-YdS">
+                    <rect key="frame" x="8" y="365" width="62" height="51"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="62" id="Vlk-bK-b6E"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlz-vC-yh6">
+                    <rect key="frame" x="152" y="144" width="160" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="1E0-iO-5GM"/>
+                        <constraint firstAttribute="height" constant="120" id="BIa-wV-4bG"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="geo03_button"/>
+                    <state key="highlighted" backgroundImage="geo03_button_down"/>
+                    <connections>
+                        <action selector="OnListOfStoresClicked:" destination="-1" eventType="touchUpInside" id="cRz-Bo-tUJ"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="geo02" translatesAutoresizingMaskIntoConstraints="NO" id="CTj-ym-HVz">
+                    <rect key="frame" x="238" y="272" width="74" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="74" id="A6P-rs-enj"/>
+                        <constraint firstAttribute="height" constant="56" id="Ra8-kL-JuD"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" image="map_02" translatesAutoresizingMaskIntoConstraints="NO" id="jhX-0A-B6c">
+                    <rect key="frame" x="8" y="139" width="243" height="284"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="dCo-Bo-SzF" firstAttribute="top" secondItem="2" secondAttribute="top" id="4YC-cI-NCW"/>
+                <constraint firstAttribute="trailing" secondItem="jhX-0A-B6c" secondAttribute="trailing" constant="69" id="53G-8D-iDg"/>
+                <constraint firstItem="A8f-v2-Pmv" firstAttribute="top" secondItem="Za9-o8-Iht" secondAttribute="bottom" constant="8" id="6ir-9f-1Wh"/>
+                <constraint firstItem="9lS-v8-wLf" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="77m-Y9-Gbg"/>
+                <constraint firstItem="CTj-ym-HVz" firstAttribute="top" secondItem="Jlz-vC-yh6" secondAttribute="bottom" constant="8" id="99X-63-Hyb"/>
+                <constraint firstAttribute="trailing" secondItem="CTj-ym-HVz" secondAttribute="trailing" constant="8" id="Ce3-Mx-PRV"/>
+                <constraint firstAttribute="trailing" secondItem="9lS-v8-wLf" secondAttribute="trailing" constant="4" id="Fe6-Cj-MAq"/>
+                <constraint firstItem="jhX-0A-B6c" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="8" id="GSP-or-eNC"/>
+                <constraint firstItem="Za9-o8-Iht" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="4" id="MPl-16-jXc"/>
+                <constraint firstItem="qvj-Ki-YdS" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="8" id="NTZ-gE-vVG"/>
+                <constraint firstItem="mxv-hV-26F" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="OnL-QP-Ns6"/>
+                <constraint firstItem="qvj-Ki-YdS" firstAttribute="height" secondItem="jhX-0A-B6c" secondAttribute="height" multiplier="0.18" id="PSM-Hq-cdc"/>
+                <constraint firstItem="qvj-Ki-YdS" firstAttribute="top" relation="lessThanOrEqual" secondItem="jhX-0A-B6c" secondAttribute="bottom" constant="36" id="Q3H-ho-Gpb"/>
+                <constraint firstItem="Za9-o8-Iht" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="QkC-q3-mPe"/>
+                <constraint firstAttribute="trailing" secondItem="dCo-Bo-SzF" secondAttribute="trailing" id="SvZ-6U-NKw"/>
+                <constraint firstItem="A8f-v2-Pmv" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="4" id="Szr-sc-QtH"/>
+                <constraint firstItem="Za9-o8-Iht" firstAttribute="top" secondItem="qvj-Ki-YdS" secondAttribute="bottom" constant="16" id="T9h-7K-Vq2"/>
+                <constraint firstItem="jhX-0A-B6c" firstAttribute="top" secondItem="dCo-Bo-SzF" secondAttribute="bottom" constant="19" id="U25-Tt-3sR"/>
+                <constraint firstAttribute="trailing" secondItem="Za9-o8-Iht" secondAttribute="trailing" constant="4" id="WlW-00-Gz4"/>
+                <constraint firstItem="Jlz-vC-yh6" firstAttribute="top" secondItem="dCo-Bo-SzF" secondAttribute="bottom" constant="24" id="aT2-2B-ey4"/>
+                <constraint firstItem="9lS-v8-wLf" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="4" id="c2o-hs-kka"/>
+                <constraint firstItem="A8f-v2-Pmv" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="dPK-Fh-RqV"/>
+                <constraint firstItem="jhX-0A-B6c" firstAttribute="height" secondItem="2" secondAttribute="height" multiplier="0.5" id="exA-Iw-mie"/>
+                <constraint firstAttribute="trailing" secondItem="A8f-v2-Pmv" secondAttribute="trailing" constant="4" id="fer-VX-289"/>
+                <constraint firstItem="9lS-v8-wLf" firstAttribute="top" secondItem="A8f-v2-Pmv" secondAttribute="bottom" constant="4" id="lHw-Qc-fDd"/>
+                <constraint firstAttribute="trailing" secondItem="Jlz-vC-yh6" secondAttribute="trailing" constant="8" id="vkA-NZ-F5C"/>
+                <constraint firstAttribute="bottom" secondItem="9lS-v8-wLf" secondAttribute="bottom" constant="8" id="xS5-vs-MuC"/>
+                <constraint firstItem="dCo-Bo-SzF" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="ymi-xF-O3h"/>
+            </constraints>
+            <point key="canvasLocation" x="327" y="366"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ButtonBackground" width="391" height="109"/>
+        <image name="geo01" width="102" height="99"/>
+        <image name="geo02" width="82" height="125"/>
+        <image name="geo03_button" width="300" height="219"/>
+        <image name="geo03_button_down" width="300" height="219"/>
+        <image name="map_02" width="441" height="516"/>
+    </resources>
+</document>

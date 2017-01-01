@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="TigerBasic.otf">
+            <string>tiger-basic-Regular</string>
+        </mutableArray>
+        <mutableArray key="TigerCandy.otf">
+            <string>Tiger-Candy_201509-Regular</string>
+            <string>Tiger-Candy_201509-Regular</string>
+            <string>Tiger-Candy_201509-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CitiesCheckInViewController">
+            <connections>
+                <outlet property="backButton" destination="805-PF-RNd" id="lqU-ET-RKn"/>
+                <outlet property="citiesStackHeightConstraint" destination="AC4-Cu-9Hx" id="guE-ti-DTg"/>
+                <outlet property="citiesStackView" destination="keQ-jD-amC" id="d0n-k6-zz6"/>
+                <outlet property="missionDescriptionLabel" destination="ecX-VV-Uzn" id="JcB-YT-1sD"/>
+                <outlet property="titleLabel" destination="COP-uh-9da" id="wW2-h1-nBC"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uaw-7E-ACf">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="missione: CHECK-IN IN 2 CITTÀ" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COP-uh-9da" userLabel="MISSIONE: CHECK-IN IN 2 CITA">
+                            <rect key="frame" x="63" y="27" width="342.5" height="67.5"/>
+                            <fontDescription key="fontDescription" name="Tiger-Candy_201509-Regular" family="Tiger-Candy_201509" pointSize="27"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="805-PF-RNd">
+                            <rect key="frame" x="8" y="35" width="47.5" height="33"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="805-PF-RNd" secondAttribute="height" multiplier="77:53" id="16H-Td-ulb"/>
+                            </constraints>
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" image="BackButton"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.9529411793" green="0.9529411793" blue="0.94901961089999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="COP-uh-9da" secondAttribute="trailing" constant="8" id="4Jk-RD-2nA"/>
+                        <constraint firstItem="COP-uh-9da" firstAttribute="top" secondItem="uaw-7E-ACf" secondAttribute="top" constant="27" id="5dN-uj-R7a"/>
+                        <constraint firstItem="805-PF-RNd" firstAttribute="leading" secondItem="uaw-7E-ACf" secondAttribute="leading" constant="8" id="67b-QN-UI2"/>
+                        <constraint firstAttribute="bottom" secondItem="805-PF-RNd" secondAttribute="bottom" constant="14" id="QfR-k0-7np"/>
+                        <constraint firstItem="805-PF-RNd" firstAttribute="height" secondItem="uaw-7E-ACf" secondAttribute="height" multiplier="0.4" id="dpv-De-uyZ"/>
+                        <constraint firstItem="COP-uh-9da" firstAttribute="leading" secondItem="805-PF-RNd" secondAttribute="trailing" constant="8" id="lcC-rX-ONo"/>
+                        <constraint firstAttribute="height" constant="82" id="yRF-0x-W69"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Q1-d5-AsV">
+                    <rect key="frame" x="0.0" y="524" width="414" height="203"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="keQ-jD-amC">
+                            <rect key="frame" x="101" y="40" width="202" height="120"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="aMv-Q5-Whe">
+                                    <rect key="frame" x="0.0" y="0.0" width="71" height="120"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPW-NO-JbL">
+                                            <rect key="frame" x="0.0" y="0.0" width="71" height="72"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="sPW-NO-JbL" secondAttribute="height" multiplier="167:168" id="jdX-zA-LHu"/>
+                                            </constraints>
+                                            <state key="normal" image="missione_tiger_checkin_2citta_icon_on"/>
+                                            <state key="disabled" image="missione_tiger_checkin_2citta_icon_off"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="milano" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9c6-NO-wl8">
+                                            <rect key="frame" x="0.0" y="84" width="71" height="37"/>
+                                            <fontDescription key="fontDescription" name="Tiger-Candy_201509-Regular" family="Tiger-Candy_201509" pointSize="29"/>
+                                            <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="zvH-0x-FsU">
+                                    <rect key="frame" x="131" y="0.0" width="72" height="120"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucZ-qK-8I7">
+                                            <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="ucZ-qK-8I7" secondAttribute="height" multiplier="167:168" id="tbC-CM-RCc"/>
+                                            </constraints>
+                                            <state key="normal" image="missione_tiger_checkin_2citta_icon_on"/>
+                                            <state key="disabled" image="missione_tiger_checkin_2citta_icon_off"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="milano" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtV-5c-QWQ">
+                                            <rect key="frame" x="0.0" y="84" width="72" height="37"/>
+                                            <fontDescription key="fontDescription" name="Tiger-Candy_201509-Regular" family="Tiger-Candy_201509" pointSize="29"/>
+                                            <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="120" id="AC4-Cu-9Hx"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="keQ-jD-amC" firstAttribute="centerX" secondItem="3Q1-d5-AsV" secondAttribute="centerX" id="EIG-ib-qMJ"/>
+                        <constraint firstItem="keQ-jD-amC" firstAttribute="centerY" secondItem="3Q1-d5-AsV" secondAttribute="centerY" id="rK2-CN-PLO"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xy9-2P-qzy">
+                    <rect key="frame" x="0.0" y="98" width="414" height="294.5"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="missione_tiger_checkin_2citta_img" translatesAutoresizingMaskIntoConstraints="NO" id="iwH-WL-B6y">
+                            <rect key="frame" x="20" y="0.0" width="374" height="294.5"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="iwH-WL-B6y" secondAttribute="trailing" constant="20" id="2jy-xh-Fn9"/>
+                        <constraint firstAttribute="bottom" secondItem="iwH-WL-B6y" secondAttribute="bottom" id="7wF-WS-QQK"/>
+                        <constraint firstItem="iwH-WL-B6y" firstAttribute="leading" secondItem="Xy9-2P-qzy" secondAttribute="leading" constant="20" id="BUV-Uh-WKy"/>
+                        <constraint firstItem="iwH-WL-B6y" firstAttribute="top" secondItem="Xy9-2P-qzy" secondAttribute="top" id="JTk-yM-rML"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="missione_tiger_checkin_2citta_punti" translatesAutoresizingMaskIntoConstraints="NO" id="rFL-9D-d4h">
+                    <rect key="frame" x="277.5" y="270" width="136.5" height="162"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecX-VV-Uzn">
+                    <rect key="frame" x="82" y="408" width="251" height="108"/>
+                    <string key="text">Fai il check-in diverse città
+Tiger! ne bastano due per
+completare la missione!</string>
+                    <fontDescription key="fontDescription" name="tiger-basic-Regular" family="tiger-basic" pointSize="30"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="3Q1-d5-AsV" secondAttribute="trailing" id="0D2-zW-eGE"/>
+                <constraint firstItem="rFL-9D-d4h" firstAttribute="height" secondItem="Xy9-2P-qzy" secondAttribute="height" multiplier="0.55" id="5Bz-X4-4Ob"/>
+                <constraint firstAttribute="trailing" secondItem="Xy9-2P-qzy" secondAttribute="trailing" id="6LO-BO-Fcp"/>
+                <constraint firstItem="Xy9-2P-qzy" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="6nn-F6-v87"/>
+                <constraint firstItem="3Q1-d5-AsV" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="BlV-VJ-J1j"/>
+                <constraint firstItem="uaw-7E-ACf" firstAttribute="top" secondItem="2" secondAttribute="top" id="D4e-H7-q8I"/>
+                <constraint firstItem="ecX-VV-Uzn" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="GOB-fa-zyB"/>
+                <constraint firstItem="Xy9-2P-qzy" firstAttribute="top" secondItem="uaw-7E-ACf" secondAttribute="bottom" constant="16" id="VpI-y8-BCf"/>
+                <constraint firstAttribute="trailing" secondItem="uaw-7E-ACf" secondAttribute="trailing" id="WH4-bG-Zyz"/>
+                <constraint firstItem="rFL-9D-d4h" firstAttribute="width" secondItem="Xy9-2P-qzy" secondAttribute="width" multiplier="0.33" id="YeK-wx-1Bk"/>
+                <constraint firstItem="3Q1-d5-AsV" firstAttribute="top" secondItem="ecX-VV-Uzn" secondAttribute="bottom" constant="8" id="YjR-jz-1QD"/>
+                <constraint firstAttribute="bottom" secondItem="3Q1-d5-AsV" secondAttribute="bottom" constant="8" id="cGc-Jq-RLa"/>
+                <constraint firstItem="ecX-VV-Uzn" firstAttribute="top" secondItem="Xy9-2P-qzy" secondAttribute="bottom" constant="16" id="dX0-7h-pYu"/>
+                <constraint firstAttribute="trailing" secondItem="rFL-9D-d4h" secondAttribute="trailing" id="f2X-He-6gz"/>
+                <constraint firstItem="rFL-9D-d4h" firstAttribute="bottom" secondItem="Xy9-2P-qzy" secondAttribute="bottom" constant="40" id="gft-1c-xLk"/>
+                <constraint firstItem="uaw-7E-ACf" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="h2n-t4-66J"/>
+                <constraint firstItem="Xy9-2P-qzy" firstAttribute="height" secondItem="2" secondAttribute="height" multiplier="0.4" id="itQ-PY-sOd"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+            <point key="canvasLocation" x="280" y="367"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="BackButton" width="77" height="53"/>
+        <image name="missione_tiger_checkin_2citta_icon_off" width="167" height="168"/>
+        <image name="missione_tiger_checkin_2citta_icon_on" width="167" height="168"/>
+        <image name="missione_tiger_checkin_2citta_img" width="571" height="435"/>
+        <image name="missione_tiger_checkin_2citta_punti" width="238" height="271"/>
+    </resources>
+</document>

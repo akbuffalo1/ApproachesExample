@@ -1,0 +1,13 @@
+diff a/Pages/EnableNotificationsViewController.cs b/Pages/EnableNotificationsViewController.cs	(rejected hunks)
+@@ -49,7 +49,11 @@
+              message.AttributedText = AttributedText;
+  
+              _okCommand = UICommon.CreateButton("Ok");
+++<<<<<<< HEAD
+ +            _okCommand.TouchUpInside += delegate { NavigationController.PushViewController(new HomeViewController(), true); };
+++=======
++             _okCommand.TouchUpInside += delegate { NavigationController.PushViewController(new StoresViewController(), true); };
+++>>>>>>> 22adfd111c99aedef14057b1f9fd6d97ea18b2fb
+  
+              actionStack.AddArrangedSubview(message);
+              actionStack.AddArrangedSubview(_okCommand);

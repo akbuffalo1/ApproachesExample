@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TigerTextView">
+        <attr name="font" format="string"/>
+    </declare-styleable>
+  <declare-styleable name="CardStack">
+    <attr name="backgroundColor" format="color"/>
+    <attr name="stackMargin" format="integer" />
+  </declare-styleable>
+
+  <declare-styleable name="ExpProgressBar">
+    <attr name="cpb_progress" format="integer" />
+    <attr name="cpb_progressbar_color" format="color" />
+    <attr name="cpb_background_progressbar_color" format="color" />
+    <attr name="cpb_progressbar_width" format="dimension" />
+    <attr name="cpb_background_progressbar_width" format="dimension" />
+    <attr name="cpb_text_progress_size" format="dimension" />
+    <attr name="cpb_text_progress_font" format="string" />
+    <attr name="cpb_text_hint_size" format="dimension" />
+    <attr name="cpb_text_hint_font" format="string" />
+    <attr name="cpb_text_shift" format="dimension" />
+    <attr name="cpb_padding" format="dimension" />
+  </declare-styleable>
+
+  <declare-styleable name="TintableButton">
+    <attr name="tint" format="reference" />
+  </declare-styleable>
+  
+</resources>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="FrutigerMedium.otf">
+            <string>FrutigerNextLTW1G-MediumCn</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomTextField">
+            <connections>
+                <outlet property="Divider" destination="Sw0-Bv-sqU" id="name-outlet-Sw0-Bv-sqU"/>
+                <outlet property="Icon" destination="0cv-a7-eY7" id="sXm-YH-A2b"/>
+                <outlet property="View" destination="1" id="0Tx-Ae-a1J"/>
+                <outlet property="textField" destination="8hu-jf-ofW" id="JhW-6v-8t8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="396" height="57"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ACq-dZ-zr6">
+                    <rect key="frame" x="120" y="0.0" width="156" height="57"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="enroll_01" translatesAutoresizingMaskIntoConstraints="NO" id="0cv-a7-eY7">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="57"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="kkB-u1-eh3"/>
+                            </constraints>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8hu-jf-ofW">
+                            <rect key="frame" x="35" y="0.0" width="121" height="57"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="FrutigerNextLTW1G-MediumCn" family="Frutiger Next LT W1G" pointSize="19"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="8hu-jf-ofW" firstAttribute="leading" secondItem="0cv-a7-eY7" secondAttribute="trailing" constant="8" id="Jvs-wi-phW"/>
+                        <constraint firstAttribute="bottom" secondItem="0cv-a7-eY7" secondAttribute="bottom" constant="8" id="P2X-Th-f52"/>
+                        <constraint firstItem="0cv-a7-eY7" firstAttribute="leading" secondItem="ACq-dZ-zr6" secondAttribute="leading" constant="8" id="diL-Gi-05d"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="j6p-49-TP5"/>
+                        <constraint firstItem="0cv-a7-eY7" firstAttribute="top" secondItem="ACq-dZ-zr6" secondAttribute="top" constant="8" id="rzE-tK-ZHD"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="P2X-Th-f52"/>
+                            <exclude reference="diL-Gi-05d"/>
+                            <exclude reference="rzE-tK-ZHD"/>
+                            <exclude reference="Jvs-wi-phW"/>
+                        </mask>
+                    </variation>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sw0-Bv-sqU">
+                    <rect key="frame" x="0.0" y="56" width="396" height="1"/>
+                    <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="mhu-B4-maP"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ACq-dZ-zr6" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="1Mc-Bl-GsV"/>
+                <constraint firstItem="ACq-dZ-zr6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1" secondAttribute="leading" constant="8" id="BXA-rS-NJk"/>
+                <constraint firstItem="ACq-dZ-zr6" firstAttribute="leading" relation="lessThanOrEqual" secondItem="1" secondAttribute="leading" constant="120" id="WQg-l8-D85"/>
+                <constraint firstItem="ACq-dZ-zr6" firstAttribute="top" secondItem="1" secondAttribute="top" id="Wte-Lb-6q8"/>
+                <constraint firstItem="Sw0-Bv-sqU" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="X49-Tb-MZH"/>
+                <constraint firstAttribute="bottom" secondItem="Sw0-Bv-sqU" secondAttribute="bottom" id="hi4-QO-Cki"/>
+                <constraint firstAttribute="trailing" secondItem="Sw0-Bv-sqU" secondAttribute="trailing" id="jC3-Hw-uxG"/>
+                <constraint firstAttribute="bottom" secondItem="ACq-dZ-zr6" secondAttribute="bottom" id="qgj-Xt-IkM"/>
+                <constraint firstAttribute="trailing" secondItem="ACq-dZ-zr6" secondAttribute="trailing" id="rNm-iq-dDd"/>
+                <constraint firstItem="ACq-dZ-zr6" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="sdY-SF-0b8"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="1Mc-Bl-GsV"/>
+                    <exclude reference="rNm-iq-dDd"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="271" y="145.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="enroll_01" width="53" height="56"/>
+    </resources>
+</document>

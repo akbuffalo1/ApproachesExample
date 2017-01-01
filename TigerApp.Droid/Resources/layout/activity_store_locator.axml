@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<!--TODO leave it as it is or replace with ActionBar-->
+    <RelativeLayout
+        android:id="@+id/layoutActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbar_size"
+        android:background="@drawable/back_gray">
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/actionbar_size"
+            android:layout_height="@dimen/actionbar_size"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/btn_image_actionbar_selector"
+            android:scaleType="center"
+            android:src="@drawable/btn_tiger_back" />
+        <tigerapp.droid.ui.TigerTextView
+            android:id="@+id/txtCaption"
+            style="@style/StoresListCaption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/store_locator" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/storeInfoContainer"
+        android:layout_below="@id/layoutActionBar"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true">
+        <fragment
+            android:id="@+id/map"
+            class="com.google.android.gms.maps.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="100dp"
+            tools:layout="@layout/test_view" />
+        <RelativeLayout
+            android:id="@+id/layoutInput"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="#7f666666"
+            android:padding="16dp">
+            <ImageButton
+                android:id="@+id/btnLocator"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:background="@drawable/btn_locator_background"
+                android:src="@drawable/ic_locator" />
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/btnLocator"
+                android:layout_toRightOf="@id/btnLocator"
+                android:background="#111111" />
+            <EditText
+                android:id="@+id/txtInpuLoc"
+                style="@style/StoreLocatorInputText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/btnLocator"
+                android:layout_toRightOf="@id/btnLocator"
+                android:background="@color/store_locator_input_back"
+                android:hint="@string/store_locator_input_hint"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingStart="10dp"
+                android:paddingBottom="5dp"
+                android:textSize="9pt" />
+        </RelativeLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/locator_panel_border"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="-5dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/storeInfoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/storesList"
+            android:layout_width="match_parent"
+            android:layout_height="165dp"
+            android:orientation="horizontal"
+            android:scrollbars="vertical"
+            tools:listitem="@layout/item_store_locator_list" />
+        <tigerapp.droid.ui.TigerTextView
+            android:id="@+id/txtStoresNotFound"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:gravity="center"
+            app:font="fonts/TigerCandyRegular.ttf"
+            android:textSize="10pt"
+            android:text="@string/msg_stores_not_found" />
+        <RelativeLayout
+            android:id="@+id/storeInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alignmentMode="alignBounds"
+            android:background="@color/white"
+            android:columnCount="3"
+            android:columnOrderPreserved="false"
+            android:visibility="gone">
+            <tigerapp.droid.ui.TigerTextView
+                android:id="@+id/txtTown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="@dimen/store_locator_store_info_start_padding"
+                android:paddingStart="@dimen/store_locator_store_info_start_padding"
+                android:paddingTop="15dp"
+                android:text="Torino"
+                android:textColor="@color/txt_black"
+                android:textSize="16pt"
+                app:font="fonts/TigerCandyRegular.ttf" />
+            <tigerapp.droid.ui.TigerTextView
+                android:id="@+id/txtAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTown"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingLeft="@dimen/store_locator_store_info_start_padding"
+                android:paddingStart="@dimen/store_locator_store_info_start_padding"
+                android:text="Via Garibaldi 36"
+                android:textColor="@color/txt_black"
+                android:textSize="8pt"
+                app:font="fonts/FrutigerRegular.ttf" />
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_below="@id/txtAddress"
+                android:background="@drawable/horizontal_line" />
+            <tigerapp.droid.ui.TigerTextView
+                android:id="@+id/txtDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="end"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="62m"
+                android:textColor="@color/txt_black"
+                android:textSize="21pt"
+                app:font="fonts/TigerRegular.ttf" />
+            <tigerapp.droid.ui.TigerTextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider1"
+                android:gravity="center"
+                android:paddingLeft="@dimen/store_locator_store_info_start_padding"
+                android:paddingStart="@dimen/store_locator_store_info_start_padding"
+                android:paddingTop="10dp"
+                android:text="Orari"
+                android:textColor="@color/txt_black"
+                android:textSize="16pt"
+                app:font="fonts/TigerRegular.ttf" />
+            <View
+                android:id="@+id/devider2"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_below="@id/txtWorkingHours"
+                android:background="@drawable/horizontal_line" />
+            <tigerapp.droid.ui.TigerTextView
+                android:id="@+id/txtWorkingHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtName"
+                android:gravity="start"
+                android:paddingBottom="5dp"
+                android:paddingLeft="@dimen/store_locator_store_info_start_padding"
+                android:paddingStart="@dimen/store_locator_store_info_start_padding"
+                android:text="Lundedi a Sabato 9:00 - 20:00 \nDomenica 10:00 - 20:00"
+                android:textColor="@color/txt_black"
+                android:textSize="8pt"
+                app:font="fonts/FrutigerRegular.ttf" />
+            <tigerapp.droid.ui.TigerTextView
+                android:id="@+id/txtPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/devider2"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:paddingLeft="@dimen/store_locator_store_info_start_padding"
+                android:paddingStart="@dimen/store_locator_store_info_start_padding"
+                android:paddingTop="15dp"
+                android:text="num tel: 011566733"
+                android:textColor="@color/txt_black"
+                android:textSize="16pt"
+                app:font="fonts/TigerRegular.ttf" />
+            <View
+                android:id="@+id/dashed"
+                android:layout_width="3dp"
+                android:layout_height="3dp"
+                android:layout_alignBottom="@id/btnPhone"
+                android:layout_below="@id/devider2"
+                android:layout_toLeftOf="@id/btnPhone"
+                android:layout_toStartOf="@id/btnPhone"
+                android:background="@drawable/dashed_line" />
+            <Button
+                android:id="@+id/btnPhone"
+                style="@style/ButtonPhoneText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/devider2"
+                android:background="@drawable/btn_image_actionbar_selector"
+                android:drawableTop="@drawable/ic_phone"
+                android:padding="5dp"
+                android:text="chiama"
+                android:textColor="#666666" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

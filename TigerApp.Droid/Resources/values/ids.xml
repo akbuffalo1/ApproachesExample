@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!--Ids for success project compilation,
+  example:
+   when you use  android:layout_above="@id/btnAuthorize" property in layout,
+    but  layout "btnAuthorize" declared next or later of your current layout
+    you will get compilation error like "Error:(81, 31) No resource found that matches the given name (at 'layout_above' with value '@id/btnAuthorize')."
+    when you declare that id here compilation will be successful
+     -->
+  <item
+      name="btnSmsLogin"
+      type="id"/>
+  <item
+      name="txtBtnSmsHint"
+      type="id"/>
+  <item
+      name="txtOr"
+      type="id"/>
+  <item
+      name="btnFacebookLogin"
+      type="id"/>
+  <item
+      name="txtPhoneInput"
+      type="id"/>
+  <item
+       name="btnNew"
+       type="id"/>
+  <item
+     name="storesList"
+     type="id"/>
+  <item
+       name="storeInfoContainer"
+       type="id"/>
+  <item
+       name="btnPhone"
+       type="id"/> 
+  <item
+       name="txtWorkingHours"
+       type="id"/>
+  <item
+       name="txtNicknameInput"
+       type="id"/>
+  <item
+       name="txtAppExpBack"
+       type="id"/>
+  <item
+       name="txtPageMsg"
+       type="id"/>
+  <item
+       name="txtAppExp"
+       type="id"/>
+  <item
+       name="btnConfirm"
+       type="id"/>
+  <item
+       name="btnScan"
+       type="id"/>
+  <item
+       name="imgTigerLogo"
+       type="id"/>
+  <item
+       name="txtBottomMsg"
+       type="id"/>
+  <item
+       name="txtAuthorizeMessage"
+       type="id"/>
+  <item
+       name="btnAuthorize"
+       type="id"/>
+  <item
+       name="btnScanMissionCompleteCommand"
+       type="id"/>
+  <item
+       name="imgProductsCataloguePopup1"
+       type="id"/>
+  <item
+       name="btnMissionCompleteCommand"
+       type="id"/>
+  
+</resources>

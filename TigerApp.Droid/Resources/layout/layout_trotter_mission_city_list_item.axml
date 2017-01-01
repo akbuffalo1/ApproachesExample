@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="@dimen/missione_tiger_trotter_bottom_city_list_width"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_height="match_parent">
+        <ImageView
+            android:src="@drawable/missione_tiger_trotter_img3"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.9"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/tvStoreName"
+            android:text="Torino"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/two_city_mission_title_text_size"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1"
+            android:textAlignment="center"
+            android:gravity="center"
+            app:font="fonts/TigerRegular.ttf" />
+        <TextView
+            android:id="@+id/tvStoreAddress"
+            android:text="Via Garibaldi 36"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/missione_tiger_trotter_city_address_text_size"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textAlignment="center"
+            app:font="fonts/FrutigerRegular.ttf" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/ivCityListDivider"
+        android:layout_width="3dp"
+        android:layout_height="match_parent"
+        android:scaleY="1.5"
+        android:tint="#7f7f7f"
+        android:tintMode="src_in"
+        android:src="@drawable/divisor_line" />
+</LinearLayout>

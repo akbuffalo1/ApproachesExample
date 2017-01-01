@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="PageMissionText">
+        <item name="android:textSize">16pt</item>
+        <item name="android:textColor">@color/txt_black</item>
+        <item name="android:lineSpacingExtra">-10dp</item>
+        <item name="font">fonts/TigerRegular.ttf</item>
+    </style>
+</resources>

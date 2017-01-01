@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TestViewController">
+            <connections>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="K1T-D9-4jK">
+                    <rect key="frame" x="8" y="8" width="184" height="550"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nV-KF-o7m">
+                            <rect key="frame" x="0.0" y="0.0" width="175" height="30"/>
+                            <state key="normal" title="Enable Notifications Page"/>
+                            <connections>
+                                <action selector="gotoEnableNotificationsPage:" destination="-1" eventType="touchUpInside" id="NHg-f4-yA8"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13">
+                            <rect key="frame" x="0.0" y="40" width="169" height="30"/>
+                            <state key="normal" title="Edit Profile Mission Page">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="goToEditProfileMission:" destination="-1" eventType="touchUpInside" id="14"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17">
+                            <rect key="frame" x="0.0" y="80" width="129" height="30"/>
+                            <state key="normal" title="Scan Mission Page">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="goToScanMission:" destination="-1" eventType="touchUpInside" id="18"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgK-hk-2AL">
+                            <rect key="frame" x="0.0" y="120" width="129" height="30"/>
+                            <state key="normal" title="List of Stores Page"/>
+                            <connections>
+                                <action selector="gotoListOfStoresPage:" destination="-1" eventType="touchUpInside" id="V30-1A-qUN"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21">
+                            <rect key="frame" x="0.0" y="160" width="134" height="30"/>
+                            <state key="normal" title="Share Mission Page">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="goToShareMission:" destination="-1" eventType="touchUpInside" id="22"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywd-F2-xaL">
+                            <rect key="frame" x="0.0" y="200" width="180" height="30"/>
+                            <state key="normal" title="Unsupported Region Page"/>
+                            <connections>
+                                <action selector="gotoUnsupportedRegionPage:" destination="-1" eventType="touchUpInside" id="V4e-If-9wt"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Irf-T3-uOX">
+                            <rect key="frame" x="0.0" y="240" width="171" height="30"/>
+                            <state key="normal" title="Enable Geolocation Page"/>
+                            <connections>
+                                <action selector="gotoEnableGeolocationPage:" destination="-1" eventType="touchUpInside" id="14g-CJ-Czm"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Evq-Cs-KHB">
+                            <rect key="frame" x="0.0" y="280" width="135" height="30"/>
+                            <state key="normal" title="Home Tutorial Page"/>
+                            <connections>
+                                <action selector="gotoHomeTutorialPage:" destination="-1" eventType="touchUpInside" id="2xx-d0-GQO"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6j-FM-nf2">
+                            <rect key="frame" x="0.0" y="320" width="147" height="30"/>
+                            <state key="normal" title="SMS Enrollment Page"/>
+                            <connections>
+                                <action selector="gotoSmsEnrollmentPage:" destination="-1" eventType="touchUpInside" id="Djk-Vh-dhF"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5">
+                            <rect key="frame" x="0.0" y="360" width="95" height="30"/>
+                            <state key="normal" title="Settings Page">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="goToSettingsPage:" destination="-1" eventType="touchUpInside" id="6"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoE-Af-3Cq">
+                            <rect key="frame" x="0.0" y="400" width="184" height="30"/>
+                            <state key="normal" title="Nickname Enrollment Page"/>
+                            <connections>
+                                <action selector="gotoNicknameEnrollmentPage:" destination="-1" eventType="touchUpInside" id="twm-9Z-O0E"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L44-bT-vTH">
+                            <rect key="frame" x="0.0" y="440" width="82" height="30"/>
+                            <state key="normal" title="Profile Page"/>
+                            <connections>
+                                <action selector="gotoProfilePage:" destination="-1" eventType="touchUpInside" id="xJr-Hd-Suw"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9">
+                            <rect key="frame" x="0.0" y="480" width="151" height="30"/>
+                            <state key="normal" title="CheckIn Mission Page">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="goToCheckInMission:" destination="-1" eventType="touchUpInside" id="12"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlC-qt-BgT">
+                            <rect key="frame" x="0.0" y="520" width="131" height="30"/>
+                            <state key="normal" title="Store Locator Page">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="gotoStoreLocatorPage:" destination="-1" eventType="touchUpInside" id="oRJ-HK-PH7"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OR7-Dq-sPF">
+                    <rect key="frame" x="464" y="8" width="135" height="550"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ee-r7-yRE">
+                            <rect key="frame" x="0.0" y="0.0" width="85" height="30"/>
+                            <state key="normal" title="ExpHome L1"/>
+                            <connections>
+                                <action selector="gotoExpHomeLevel1:" destination="-1" eventType="touchUpInside" id="t0g-ct-5A9"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpg-DX-5I9">
+                            <rect key="frame" x="0.0" y="40" width="88" height="30"/>
+                            <state key="normal" title="ExpHome L2"/>
+                            <connections>
+                                <action selector="gotoExpHomeLevel2:" destination="-1" eventType="touchUpInside" id="WNE-67-F85"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6u-eU-vFL">
+                            <rect key="frame" x="0.0" y="80" width="88" height="30"/>
+                            <state key="normal" title="ExpHome L3"/>
+                            <connections>
+                                <action selector="gotoExpHomeLevel3:" destination="-1" eventType="touchUpInside" id="gRH-Rs-3GE"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71O-dN-Cn6">
+                            <rect key="frame" x="0.0" y="120" width="88" height="30"/>
+                            <state key="normal" title="ExpHome L4"/>
+                            <connections>
+                                <action selector="gotoExpHomeLevel4:" destination="-1" eventType="touchUpInside" id="DFM-1R-QYo"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E84-9a-tPg">
+                            <rect key="frame" x="0.0" y="160" width="88" height="30"/>
+                            <state key="normal" title="ExpHome L5"/>
+                            <connections>
+                                <action selector="gotoExpHomeLevel5:" destination="-1" eventType="touchUpInside" id="TMq-OP-yXa"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25">
+                            <rect key="frame" x="0.0" y="200" width="113" height="30"/>
+                            <state key="normal" title="Change Number">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="goToChangeNumber:" destination="-1" eventType="touchUpInside" id="26"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpk-Ep-C1C">
+                            <rect key="frame" x="0.0" y="240" width="113" height="30"/>
+                            <state key="normal" title="Edit Profile Page"/>
+                            <connections>
+                                <action selector="gotoEditProfilePage:" destination="-1" eventType="touchUpInside" id="WAE-s0-7gd"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30">
+                            <rect key="frame" x="0.0" y="280" width="135" height="30"/>
+                            <state key="normal" title="Wall Of Avatar Page">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="gotoWallOfAvatarPage:" destination="-1" eventType="touchUpInside" id="JwF-OR-7pO"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33">
+                            <rect key="frame" x="0.0" y="320" width="129" height="30"/>
+                            <state key="normal" title="Scan Receipt Page">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="goToReceiptPage:" destination="-1" eventType="touchUpInside" id="34"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uQ-9U-obx">
+                            <rect key="frame" x="0.0" y="360" width="113" height="30"/>
+                            <state key="normal" title="5 Coupons Page"/>
+                            <connections>
+                                <action selector="gotoCouponsPage:" destination="-1" eventType="touchUpInside" id="Xee-mx-qtU"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gti-vV-FSX">
+                            <rect key="frame" x="0.0" y="400" width="124" height="30"/>
+                            <state key="normal" title="No Coupons Page"/>
+                            <connections>
+                                <action selector="gotoNoCouponsPage:" destination="-1" eventType="touchUpInside" id="sqy-fs-6LF"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdE-nT-vPE">
+                            <rect key="frame" x="0.0" y="440" width="128" height="30"/>
+                            <state key="normal" title="Product Catalogue"/>
+                            <connections>
+                                <action selector="goToCatalogueOfProducts:" destination="-1" eventType="touchUpInside" id="qLG-cS-ugt"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Y9-El-wXf">
+                            <rect key="frame" x="0.0" y="480" width="104" height="30"/>
+                            <state key="normal" title="Survey Mission"/>
+                            <connections>
+                                <action selector="goto2CitiesMission:" destination="-1" eventType="touchUpInside" id="c68-8O-ugF"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHG-Qz-imo">
+                            <rect key="frame" x="0.0" y="520" width="103" height="30"/>
+                            <state key="normal" title="Trotter Mission"/>
+                            <connections>
+                                <action selector="gotoTrotterMission:" destination="-1" eventType="touchUpInside" id="0kf-3N-KZt"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.89019607840000003" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="K1T-D9-4jK" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" constant="-193" id="4pi-gN-2wq"/>
+                <constraint firstItem="K1T-D9-4jK" firstAttribute="centerY" secondItem="2" secondAttribute="centerY" constant="-117" id="75x-Dz-VRD"/>
+                <constraint firstAttribute="trailing" secondItem="OR7-Dq-sPF" secondAttribute="trailing" constant="8" id="AQd-fx-NAW"/>
+                <constraint firstItem="OR7-Dq-sPF" firstAttribute="top" secondItem="2" secondAttribute="top" constant="8" id="AZl-CU-LiS"/>
+                <constraint firstItem="K1T-D9-4jK" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="8" id="RYJ-3r-Vlo"/>
+                <constraint firstItem="K1T-D9-4jK" firstAttribute="top" secondItem="2" secondAttribute="top" constant="8" id="ghW-PU-oQN"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="4pi-gN-2wq"/>
+                    <exclude reference="75x-Dz-VRD"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/layoutActionBar"
+        android:layout_width="match_parent"
+        android:background="@drawable/back_gray"
+        android:layout_height="?android:attr/actionBarSize">
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:src="@drawable/btn_tiger_back"
+            android:layout_marginLeft="5dp" />
+        <TextView
+            android:id="@+id/txtCaption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="Missione: Edit profile"
+            style="@style/EditProfileMissionCaption" />
+    </RelativeLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <FrameLayout
+            android:layout_width="300dp"
+            android:layout_height="270dp"
+            android:layout_gravity="center"
+            android:background="@drawable/edi_profile_01" />
+        <ImageView
+            android:layout_width="128dp"
+            android:layout_height="140dp"
+            android:layout_gravity="bottom|right"
+            android:src="@drawable/edi_profile_02" />
+    </FrameLayout>
+    <TextView
+        android:id="@+id/txtCaption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="Dicci qualcosa di te per entrare\n sempre più a far parte della\n community Tiger"
+        style="@style/EditProfileMissionText" />
+    <TextView
+        android:id="@+id/txtCaption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:text="I dati verranno utilizzati per\n farti avere ancora più sorprese!"
+        style="@style/EditProfileMissionText" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+    <Button
+        android:id="@+id/btnOpenEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/btn_default"
+        style="@style/ButtonsText"
+        android:text="Completa la missione" />
+</LinearLayout>
