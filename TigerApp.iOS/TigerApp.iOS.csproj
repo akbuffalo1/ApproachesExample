@@ -149,9 +149,6 @@
     <Reference Include="ModernHttpClient">
       <HintPath>..\Components\modernhttpclient-2.4.2\lib\ios-unified\ModernHttpClient.dll</HintPath>
     </Reference>
-    <Reference Include="XCardView">
-      <HintPath>..\Components\XCardView-1.1\lib\ios-unified\XCardView.dll</HintPath>
-    </Reference>
     <Reference Include="Google.Core">
       <HintPath>..\packages\Xamarin.Google.iOS.Core.2.0.4.1\lib\Xamarin.iOS10\Google.Core.dll</HintPath>
     </Reference>
@@ -194,6 +191,9 @@
     </Reference>
     <Reference Include="HockeySDK.iOSBindings">
       <HintPath>..\packages\HockeySDK.Xamarin.4.1.0\lib\Xamarin.iOS10\HockeySDK.iOSBindings.dll</HintPath>
+    </Reference>
+    <Reference Include="XCardView">
+      <HintPath>..\Components\XCardView-1.1\lib\ios-unified\XCardView.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

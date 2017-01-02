@@ -7,17 +7,18 @@ using System.Threading.Tasks;
 using AD;
 using AD.Plugins.OAuth;
 using Newtonsoft.Json.Linq;
+using ReactiveUI.Fody.Helpers;
 using Xamarin.Auth;
 
 namespace TigerApp.Shared.Services.API
 {
 	public interface ITwitterService
     {
-		BehaviorSubject<Account> CurrentAccount { get; }
+		Account CurrentAccount { get; }
         BehaviorSubject<OAuth1Authenticator> ServiceReadySub { get; }
 		void Init();
 		void Authorize();
-		Task Logout();
+		void Logout();
 		IObservable<JObject> GetUserData();
     }
 
@@ -25,7 +26,8 @@ namespace TigerApp.Shared.Services.API
     {
         const string PROVIDER_NAME = "Twitter";
 
-		public BehaviorSubject<Account> CurrentAccount { get; protected set; }
+		[Reactive]
+        public Account CurrentAccount { get; protected set; }
 
 		public BehaviorSubject<OAuth1Authenticator> ServiceReadySub { get; protected set; }
 
@@ -36,13 +38,12 @@ namespace TigerApp.Shared.Services.API
             _authProvider = authProvider ?? Resolver.Resolve<IOAuthServiceProvider>();
             _accountHelper = accountHelper ?? Resolver.Resolve<IOAuthAccountHelper>();
             ServiceReadySub = new BehaviorSubject<OAuth1Authenticator>(null);
-			CurrentAccount = new BehaviorSubject<Account>(null);
 
 			_accountHelper
 				.FindAccountsObservable(PROVIDER_NAME)
 				.Select(accounts => accounts.FirstOrDefault())
           		.Where(account => null != account)
-				.Subscribe(account => CurrentAccount.OnNext(account));
+				.Subscribe(account => CurrentAccount = account);
 
 			_authProvider.ConfigLoadedSubject.Subscribe(IsConfigLoaded =>
             {
@@ -52,7 +53,7 @@ namespace TigerApp.Shared.Services.API
                 accountHandler = (sender, args) =>
                 {
                     _accountHelper.TrySaveIfNotNull(args.Account, PROVIDER_NAME);
-                    CurrentAccount.OnNext(args.Account);
+                    CurrentAccount = args.Account;
                     authenticator.Completed -= accountHandler;
                 };
                 authenticator.Completed += accountHandler;
@@ -63,14 +64,10 @@ namespace TigerApp.Shared.Services.API
 
 		public void Authorize() => _accountHelper.StartAuthorization(_authProvider.ProvideAuthenticator());
 
-		public async Task Logout()
+		public void Logout()
 		{
-			var account = await CurrentAccount.FirstOrDefaultAsync();
-			if (null != account)
-			{
-				_accountHelper.TryDeleteIfNotNullAndExist(account, PROVIDER_NAME);
-				CurrentAccount.OnNext(null);
-			}
+			_accountHelper.TryDeleteIfNotNullAndExist(CurrentAccount, PROVIDER_NAME);
+			CurrentAccount = null;
 		}
 
         public IObservable<JObject> GetUserData()
@@ -79,8 +76,7 @@ namespace TigerApp.Shared.Services.API
             {
                 try
                 {
-					var account = await CurrentAccount.FirstAsync();
-					var result = await _authProvider.ProvideAccountRequest(account).GetResponseAsync();
+					var result = await _authProvider.ProvideAccountRequest(CurrentAccount).GetResponseAsync();
                     obs.OnNext(JObject.Parse(result.GetResponseText()));
                     obs.OnCompleted();
                 }

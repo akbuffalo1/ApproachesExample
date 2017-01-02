@@ -56,15 +56,18 @@ namespace TigerApp.Shared.ViewModels
             _networkReachabilityService = networkReachabilityService ?? Resolver.Resolve<INetworkReachability>();
             _accountSender = accountSender ?? Resolver.Resolve<IAccountSenderService>();
 
-            this.WhenActivated(registerDisposable =>
+            this.WhenActivated(toDispose =>
             {
-                var accountObservable = _service.CurrentAccount.AsObservable();
+                var accountObservable = _service.WhenAnyValue(serv => serv.CurrentAccount);
                 var canLogoutOrGetProfile = accountObservable.Select(account => null != account);
-				var canAuthorize = _service
-					.ServiceReadySub
-					.AsObservable()
-					.Select(authenticator => null != authenticator)
-					.CombineLatest(canLogoutOrGetProfile, (arg1, arg2) => arg1 && !arg2);
+				var canAuthorize = 
+                    _service
+					    .ServiceReadySub
+					    .AsObservable()
+					    .Select(authenticator => null != authenticator)
+                        .CombineLatest(canLogoutOrGetProfile, (arg1, arg2) =>
+                        {
+                            return arg1 && !arg2;});
 
                 accountObservable.SubscribeOnce(account =>
                 {
@@ -97,7 +100,7 @@ namespace TigerApp.Shared.ViewModels
                 });
 
 				LogInCommand = ReactiveCommand.CreateAsyncObservable(canAuthorize, args => Observable.Start(() => _service.Authorize()));
-				LogOutCommand = ReactiveCommand.CreateAsyncObservable(canLogoutOrGetProfile, args => Observable.Start(async () => await _service.Logout()));
+				LogOutCommand = ReactiveCommand.CreateAsyncObservable(canLogoutOrGetProfile, args => Observable.Start(() => _service.Logout()));
                 GetProfileCommand = ReactiveCommand.CreateAsyncObservable(canLogoutOrGetProfile, args => Observable.Start(() =>
                 {
 					IsLoaderShowing = true;
