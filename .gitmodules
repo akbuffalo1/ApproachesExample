@@ -1,6 +1,7 @@
 [submodule "AD"]
-	path = AD	url = https://github.com/akbuffalo1/approaches_core.git
+	path = AD	
+	url = https://github.com/akbuffalo1/ApproachesCore.git
 
-[submodule "test"]
-	path = test
+[submodule "Test"]
+	path = Test
 	url = https://github.com/akbuffalo1/Test.git
