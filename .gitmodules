@@ -1,4 +1,4 @@
-[submodule "approaches_core"]
+[submodule "AD"]
 	path = AD	url = https://github.com/akbuffalo1/approaches_core.git
 
 [submodule "test"]
