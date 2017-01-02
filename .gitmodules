@@ -7,3 +7,6 @@
 	path = AppSub
 	
 	url = https://github.com/akbuffalo1/AppSub.git
+[submodule "Test"]
+	path = Test
+	url = https://github.com/akbuffalo1/Test.git
