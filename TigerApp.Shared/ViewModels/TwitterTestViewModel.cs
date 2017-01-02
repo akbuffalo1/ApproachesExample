@@ -65,9 +65,7 @@ namespace TigerApp.Shared.ViewModels
 					    .ServiceReadySub
 					    .AsObservable()
 					    .Select(authenticator => null != authenticator)
-                        .CombineLatest(canLogoutOrGetProfile, (arg1, arg2) =>
-                        {
-                            return arg1 && !arg2;});
+                        .CombineLatest(canLogoutOrGetProfile, (arg1, arg2) => arg1 && !arg2);
 
                 accountObservable.SubscribeOnce(account =>
                 {
